@@ -176,8 +176,8 @@ async def credit_wallet_command(update: Update, context: ContextTypes.DEFAULT_TY
                 if app:
                     user_lang = await get_user_notification_language(target_user_id)
                     user_notification = t('admin.notifications.user_credit', user_lang,
-                                        amount=format_money(amount, 'USD', include_currency=True),
-                                        new_balance=format_money(new_balance, 'USD', include_currency=True))
+                                        amount=format_money(amount, 'USD', show_currency=True),
+                                        new_balance=format_money(new_balance, 'USD', show_currency=True))
                     
                     await app.bot.send_message(
                         chat_id=target_user_id,
@@ -749,7 +749,7 @@ async def handle_admin_credit_user_search_text(update: Update, context: ContextT
             return
         admin_lang = await get_admin_language(effective_user.id, effective_user.language_code)
         current_balance = float(target_user['wallet_balance'] or 0)
-        balance_display = format_money(current_balance, 'USD', include_currency=True)
+        balance_display = format_money(current_balance, 'USD', show_currency=True)
         
         display_name = target_user.get('first_name', 'Unknown')
         if target_user.get('last_name'):
@@ -891,8 +891,8 @@ async def execute_admin_credit_direct(update: Update, context: ContextTypes.DEFA
                 t('admin.credit.transaction_successful', admin_lang,
                   display_name=escape_html(display_name),
                   username_display=escape_html(username_display),
-                  amount=format_money(amount, 'USD', include_currency=True),
-                  new_balance=format_money(new_balance, 'USD', include_currency=True),
+                  amount=format_money(amount, 'USD', show_currency=True),
+                  new_balance=format_money(new_balance, 'USD', show_currency=True),
                   transaction_id=transaction_id,
                   admin_name=escape_html(user.username or user.first_name)),
                 parse_mode=ParseMode.HTML
@@ -904,8 +904,8 @@ async def execute_admin_credit_direct(update: Update, context: ContextTypes.DEFA
                 if app:
                     user_lang = await get_user_notification_language(target_user_id)
                     user_notification = t('admin.notifications.user_credit', user_lang,
-                                        amount=format_money(amount, 'USD', include_currency=True),
-                                        new_balance=format_money(new_balance, 'USD', include_currency=True))
+                                        amount=format_money(amount, 'USD', show_currency=True),
+                                        new_balance=format_money(new_balance, 'USD', show_currency=True))
                     
                     await app.bot.send_message(
                         chat_id=target_user_id,
@@ -1039,7 +1039,7 @@ Try again with a different identifier:
         
         # User found - show user details and ask for amount
         current_balance = float(target_user['wallet_balance'] or 0)
-        balance_display = format_money(current_balance, 'USD', include_currency=True)
+        balance_display = format_money(current_balance, 'USD', show_currency=True)
         
         display_name = target_user.get('first_name', 'Unknown')
         if target_user.get('last_name'):
@@ -1129,7 +1129,7 @@ Please enter a valid amount in USD:
         username_display = f"@{target_user['username']}" if target_user.get('username') else "No username"
         
         message = f"""
-⚠️ <b>Confirm Credit Transaction</b>\n\n<b>User:</b> {escape_html(display_name)} ({escape_html(username_display)})\n<b>User ID:</b> <code>{target_user_id}</code>\n\n<b>Current Balance:</b> {format_money(current_balance, 'USD', include_currency=True)}\n<b>Credit Amount:</b> {format_money(amount, 'USD', include_currency=True)}\n<b>New Balance:</b> {format_money(new_balance, 'USD', include_currency=True)}\n\n⚠️ <b>This action cannot be undone!</b>
+⚠️ <b>Confirm Credit Transaction</b>\n\n<b>User:</b> {escape_html(display_name)} ({escape_html(username_display)})\n<b>User ID:</b> <code>{target_user_id}</code>\n\n<b>Current Balance:</b> {format_money(current_balance, 'USD', show_currency=True)}\n<b>Credit Amount:</b> {format_money(amount, 'USD', show_currency=True)}\n<b>New Balance:</b> {format_money(new_balance, 'USD', show_currency=True)}\n\n⚠️ <b>This action cannot be undone!</b>
 
 Are you sure you want to credit this amount?
 """
@@ -1200,8 +1200,8 @@ async def execute_admin_credit(query, target_user_id: int, amount: float):
 ✅ <b>Credit Transaction Successful</b>
 
 <b>User:</b> {escape_html(display_name)} ({escape_html(username_display)})
-<b>Amount Credited:</b> {format_money(amount, 'USD', include_currency=True)}
-<b>New Balance:</b> {format_money(new_balance, 'USD', include_currency=True)}
+<b>Amount Credited:</b> {format_money(amount, 'USD', show_currency=True)}
+<b>New Balance:</b> {format_money(new_balance, 'USD', show_currency=True)}
 
 Transaction completed successfully! 
 The user's wallet has been credited.
@@ -1230,9 +1230,9 @@ The user's wallet has been credited.
                 app = get_bot_application()
                 if app:
                     user_notification = f"""
-🎉 <b>Wallet Credit: {format_money(amount, 'USD', include_currency=True)}</b>
+🎉 <b>Wallet Credit: {format_money(amount, 'USD', show_currency=True)}</b>
 
-New Balance: {format_money(new_balance, 'USD', include_currency=True)}
+New Balance: {format_money(new_balance, 'USD', show_currency=True)}
 """
                     
                     await app.bot.send_message(

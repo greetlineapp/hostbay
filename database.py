@@ -1338,7 +1338,7 @@ async def init_database():
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_orders_created_at ON orders(created_at)")
                 
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_order_items_order_id ON order_items(order_id)")
-                cursor.execute("CREATE INDEX IF NOT EXISTS idx_order_items_product_type ON order_items(product_type)")
+                cursor.execute("CREATE INDEX IF NOT EXISTS idx_order_items_item_type ON order_items(item_type)")
                 
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_payment_intents_unified_order_id ON payment_intents_unified(order_id)")
                 cursor.execute("CREATE INDEX IF NOT EXISTS idx_payment_intents_unified_status ON payment_intents_unified(status)")

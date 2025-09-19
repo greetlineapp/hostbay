@@ -2789,7 +2789,7 @@ async def show_wallet_interface_message(update: Update):
                 else:
                     simple_type = tx_type.title()[:8]  # Truncate to 8 chars max
                 
-                transaction_history += f"{emoji} {format_money(abs(amount), 'USD', include_currency=True)} - {simple_type} ({date})\n"
+                transaction_history += f"{emoji} {format_money(abs(amount), 'USD', show_currency=True)} - {simple_type} ({date})\n"
         else:
             transaction_history = "\nNo transactions yet"
         
@@ -2799,7 +2799,7 @@ async def show_wallet_interface_message(update: Update):
         message = f"""
 💰 Wallet
 
-Balance: {format_money(balance, 'USD', include_currency=True)}
+Balance: {format_money(balance, 'USD', show_currency=True)}
 {transaction_history}
 
 Need help with payments? Contact {config.support_contact}"""
@@ -2886,9 +2886,9 @@ async def credit_wallet_command(update: Update, context: ContextTypes.DEFAULT_TY
         if current_balance + amount > 50000.00:  # $50,000 total balance limit
             await message.reply_text(
                 f"🚫 Balance Limit Exceeded\n\n"
-                f"Current Balance: {format_money(current_balance, 'USD', include_currency=True)}\n"
-                f"Requested Credit: {format_money(amount, 'USD', include_currency=True)}\n"
-                f"Would Result In: {format_money(current_balance + amount, 'USD', include_currency=True)}\n\n"
+                f"Current Balance: {format_money(current_balance, 'USD', show_currency=True)}\n"
+                f"Requested Credit: {format_money(amount, 'USD', show_currency=True)}\n"
+                f"Would Result In: {format_money(current_balance + amount, 'USD', show_currency=True)}\n\n"
                 f"Maximum wallet balance is $50,000.00"
             )
             logger.warning(f"🚫 ADMIN VALIDATION: Credit would exceed balance limit for user {target_user_id}: ${current_balance + amount}")
@@ -2911,9 +2911,9 @@ async def credit_wallet_command(update: Update, context: ContextTypes.DEFAULT_TY
             await message.reply_text(
                 f"✅ Wallet Credited Successfully\n\n"
                 f"👤 Target User ID: {target_user_id}\n"
-                f"💰 Amount Credited: {format_money(amount, 'USD', include_currency=True)}\n"
-                f"📊 Previous Balance: {format_money(current_balance, 'USD', include_currency=True)}\n"
-                f"🔄 New Balance: {format_money(new_balance, 'USD', include_currency=True)}\n\n"
+                f"💰 Amount Credited: {format_money(amount, 'USD', show_currency=True)}\n"
+                f"📊 Previous Balance: {format_money(current_balance, 'USD', show_currency=True)}\n"
+                f"🔄 New Balance: {format_money(new_balance, 'USD', show_currency=True)}\n\n"
                 f"🔒 Admin: {user.id}\n"
                 f"🕐 Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S UTC')}"
             )
@@ -3308,7 +3308,7 @@ Service temporarily down. Try again in a few minutes.
             
             # Format pricing display (price is already marked-up and in USD)
             if create_price > 0:
-                price_display = f"{format_money(create_price, currency, include_currency=True)}/year"
+                price_display = f"{format_money(create_price, currency, show_currency=True)}/year"
                 
                 # Add markup indicator if markup was applied
                 pricing_breakdown = price_info.get('pricing_breakdown', {})
@@ -3316,7 +3316,7 @@ Service temporarily down. Try again in a few minutes.
                     base_price = pricing_breakdown.get('base_price_usd', 0)
                     markup = pricing_breakdown.get('actual_markup', 0)
                     if markup > 0:
-                        price_display += f" (includes {format_money(markup, currency, include_currency=True)} service fee)"
+                        price_display += f" (includes {format_money(markup, currency, show_currency=True)} service fee)"
             else:
                 price_display = "Contact for pricing"
             
@@ -4263,7 +4263,7 @@ async def show_wallet_interface(query):
                 else:
                     simple_type = tx_type.title()[:8]  # Truncate to 8 chars max
                 
-                transaction_history += f"{emoji} {format_money(abs(amount), 'USD', include_currency=True)} - {simple_type} ({date})\n"
+                transaction_history += f"{emoji} {format_money(abs(amount), 'USD', show_currency=True)} - {simple_type} ({date})\n"
         else:
             transaction_history = "\nNo transactions yet"
         
@@ -4273,7 +4273,7 @@ async def show_wallet_interface(query):
         message = f"""
 💰 Wallet
 
-Balance: {format_money(balance, 'USD', include_currency=True)}
+Balance: {format_money(balance, 'USD', show_currency=True)}
 {transaction_history}
 
 Need help with payments? Contact {config.support_contact}"""
@@ -4972,19 +4972,19 @@ async def show_unified_payment_options(query, subscription_id: int, price: float
         user_balance = await get_user_wallet_balance(query.from_user.id)
         has_sufficient_balance = user_balance >= price
         # Show order price on button, not user balance
-        price_display = format_money(price, include_currency=False)
+        price_display = format_money(price, show_currency=False)
         wallet_text = f"💰 Pay with Wallet ({price_display})"
         if not has_sufficient_balance:
             wallet_text += " ⚠️"
     except Exception as e:
         logger.warning(f"Could not retrieve wallet balance: {e}")
-        price_display = format_money(price, include_currency=False)
+        price_display = format_money(price, show_currency=False)
         wallet_text = f"💰 Pay with Wallet ({price_display})"
         has_sufficient_balance = False
         user_balance = 0.0  # Set fallback for display
     
     # Format wallet balance for display
-    balance_display = format_money(user_balance, 'USD', include_currency=True)
+    balance_display = format_money(user_balance, 'USD', show_currency=True)
     
     message = f"""
 💳 <b>Order Checkout</b>
@@ -5025,19 +5025,19 @@ async def show_unified_payment_options_with_intent(query, intent_id: int, price:
         user_balance = await get_user_wallet_balance(query.from_user.id)
         has_sufficient_balance = user_balance >= price
         # Show order price on button, not user balance
-        price_display = format_money(price, include_currency=False)
+        price_display = format_money(price, show_currency=False)
         wallet_text = f"💰 Pay with Wallet ({price_display})"
         if not has_sufficient_balance:
             wallet_text += " ⚠️"
     except Exception as e:
         logger.warning(f"Could not retrieve wallet balance: {e}")
-        price_display = format_money(price, include_currency=False)
+        price_display = format_money(price, show_currency=False)
         wallet_text = f"💰 Pay with Wallet ({price_display})"
         has_sufficient_balance = False
         user_balance = 0.0  # Set fallback for display
     
     # Format wallet balance for display
-    balance_display = format_money(user_balance, 'USD', include_currency=True)
+    balance_display = format_money(user_balance, 'USD', show_currency=True)
     
     message = f"""
 💳 <b>Order Checkout</b>
@@ -6426,9 +6426,9 @@ async def handle_new_domain_with_hosting(update: Update, context: ContextTypes.D
 ✅ Domain Available: {domain_name}
 
 🎉 Bundle Package:
-• Domain: {domain_name} - {format_money(domain_price, 'USD', include_currency=True)}/year
+• Domain: {domain_name} - {format_money(domain_price, 'USD', show_currency=True)}/year
 • Hosting: {plan_name} - ${plan_price}/month
-• Total: {format_money(total_price, 'USD', include_currency=True)} + ${plan_price}/month
+• Total: {format_money(total_price, 'USD', show_currency=True)} + ${plan_price}/month
 
 ⚡ Instant setup with automatic DNS configuration
 
@@ -6436,7 +6436,7 @@ Ready to proceed?
 """
             
             keyboard = [
-                [InlineKeyboardButton(f"✅ Purchase Bundle - {format_money(total_price, 'USD', include_currency=True)}", callback_data=f"confirm_hosting_bundle_{plan_id}:{domain_name}")],
+                [InlineKeyboardButton(f"✅ Purchase Bundle - {format_money(total_price, 'USD', show_currency=True)}", callback_data=f"confirm_hosting_bundle_{plan_id}:{domain_name}")],
                 [InlineKeyboardButton("⬅️ Back to Domain Options", callback_data=f"collect_domain_{plan_id}")]
             ]
             reply_markup = InlineKeyboardMarkup(keyboard)
@@ -6689,7 +6689,7 @@ async def show_payment_options(query, domain_name, price, currency):
 
 Domain: {domain_name}
 Price: ${price} {currency}
-Your Wallet Balance: {format_money(wallet_balance, 'USD', include_currency=True)}
+Your Wallet Balance: {format_money(wallet_balance, 'USD', show_currency=True)}
 
 Choose your payment method:
 """
@@ -7061,7 +7061,7 @@ async def show_wallet_transaction_history(query):
             message = f"""
 📊 History
 
-Balance: {format_money(balance, 'USD', include_currency=True)}
+Balance: {format_money(balance, 'USD', show_currency=True)}
 
 No transactions yet
 """
@@ -7069,7 +7069,7 @@ No transactions yet
             message = f"""
 📊 History
 
-Balance: {format_money(balance, 'USD', include_currency=True)}
+Balance: {format_money(balance, 'USD', show_currency=True)}
 
 """
             for tx in transactions:
@@ -7316,7 +7316,7 @@ Address: {format_inline_code(payment_address)}
     else:
         message = f"""📱 {crypto_currency} Payment
 
-Amount: {format_money(usd_amount, 'USD', include_currency=True)}
+Amount: {format_money(usd_amount, 'USD', show_currency=True)}
 Address: {format_inline_code(payment_address)}
 
 💡 Tap address to copy"""
@@ -7365,7 +7365,7 @@ QR code generation timed out, but you can still copy the address above."""
 
 📱 {crypto_currency} Payment Details
 
-Amount: {format_money(usd_amount, 'USD', include_currency=True)}
+Amount: {format_money(usd_amount, 'USD', show_currency=True)}
 Address: {format_inline_code(payment_address)}
 
 💡 Copy address above to send payment
@@ -7391,7 +7391,7 @@ Address: {format_inline_code(payment_address)}
 
 📱 {crypto_currency} Payment Details
 
-Amount: {format_money(usd_amount, 'USD', include_currency=True)}
+Amount: {format_money(usd_amount, 'USD', show_currency=True)}
 Address: {format_inline_code(payment_address)}
 
 💡 Copy address above to send payment"""
@@ -9514,7 +9514,7 @@ Service temporarily down. Try again in a few minutes.
                 
                 # Format pricing display using robust money formatting (price is already in USD after markup)
                 if create_price > 0:
-                    price_display = f"{format_money(create_price, currency, include_currency=True)}/year"
+                    price_display = f"{format_money(create_price, currency, show_currency=True)}/year"
                 else:
                     price_display = "Contact for pricing"
                 
@@ -12980,7 +12980,7 @@ async def show_hosting_payment_options_with_intent(query, intent_id: int, price:
 {domain_display}
 Plan: {plan_name}
 Price: ${price}/month
-Your Wallet Balance: {format_money(wallet_balance, 'USD', include_currency=True)}
+Your Wallet Balance: {format_money(wallet_balance, 'USD', show_currency=True)}
 
 Choose your payment method:"""
         
@@ -13020,7 +13020,7 @@ async def show_hosting_payment_options(query, subscription_id: int, price: float
 {domain_display}
 Plan: {plan_name}
 Price: ${price}/month
-Your Wallet Balance: {format_money(wallet_balance, 'USD', include_currency=True)}
+Your Wallet Balance: {format_money(wallet_balance, 'USD', show_currency=True)}
 
 Choose your payment method:"""
         
