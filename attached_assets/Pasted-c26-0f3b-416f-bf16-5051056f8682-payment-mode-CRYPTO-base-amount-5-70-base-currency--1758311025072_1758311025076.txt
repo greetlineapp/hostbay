@@ -1,0 +1,13 @@
+c26-0f3b-416f-bf16-5051056f8682', 'payment_mode': 'CRYPTO', 'base_amount': '5.70', 'base_currency': 'USD', 'paid_amount': '0.049900', 'paid_currency': 'LTC', 'transaction_reference': '098b8f65d2bc5bafea5aebdd4e990d2e377f912d969578641127824409c6b324', 'transaction_type': 'PAYMENT', 'transaction_details': 'Made payment for crypto_payment on Nomadly1', 'status': 'successful', 'meta_data': {'product_name': 'crypto_payment', 'refId': 17, 'user_id': '1', 'order_id': 17, 'original_amount': 5, 'wallet_deposit': False}}
+2025-09-19 19:42:10,339 INFO webhook_handler: 💰 Payment 17 - Status: successful, Amount: $5.7
+2025-09-19 19:42:10,412 INFO webhook_handler: ✅ Found payment intent for order_id 17, user_id: 1
+2025-09-19 19:42:10,412 INFO webhook_handler: 💰 WALLET_DEPOSIT_PROCESSING: Starting $5.70 dynopay deposit for user_id 1 | txid: 098b8f65d2bc5baf... | order: 17
+2025-09-19 19:42:10,522 INFO database: 🔍 WALLET_CREDIT_DEBUG: user_result type=<class 'psycopg2.extras.RealDictRow'>, content=RealDictRow([('id', 1), ('wallet_balance', Decimal('0.00'))])
+2025-09-19 19:42:10,522 INFO database: 🔍 WALLET_CREDIT_USER_VALIDATED: user_id 1 (db_id: 1) exists with current balance $0.00
+2025-09-19 19:42:10,561 INFO database: 🔍 WALLET_CREDIT_DEBUG: transaction_result type=<class 'psycopg2.extras.RealDictRow'>, content=RealDictRow([('id', 1)])
+2025-09-19 19:42:10,561 INFO database: 💰 WALLET_CREDIT_TRANSACTION_CREATED: transaction_id 1 for $5.70
+2025-09-19 19:42:10,597 INFO database: 🔍 WALLET_CREDIT_DEBUG: balance_result type=<class 'psycopg2.extras.RealDictRow'>, content=RealDictRow([('wallet_balance', Decimal('5.70'))])
+2025-09-19 19:42:10,634 INFO database: ✅ WALLET_CREDIT_SUCCESS: $5.70 credited to user 1 | Old: $0.00 → New: $5.70 | txid: 098b8f65d2bc5baf... | transaction_id: 1
+2025-09-19 19:42:10,634 INFO webhook_handler: ✅ WALLET_DEPOSIT_SUCCESS: $5.70 processed for user_id 1 via dynopay | txid: 098b8f65d2bc5baf...
+2025-09-19 19:42:11,201 INFO webhook_handler: ✅ Message sent to telegram_id 5590563715 (user_id: 1)
+2025-09-19 19:42:29,798 INFO health_monitor: 🔍 Performing comprehensive health check...

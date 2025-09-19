@@ -1,0 +1,283 @@
+{
+  "summary": {
+    "total_workflow_tests": 17,
+    "successful_workflows": 12,
+    "failed_workflows": 5,
+    "success_rate": 70.58823529411765,
+    "production_ready": false,
+    "critical_issues_count": 0,
+    "test_timestamp": "2025-09-18T10:16:40.188896"
+  },
+  "production_readiness": {
+    "ready_for_deployment": false,
+    "blocking_issues": [],
+    "languages_tested": [
+      "en",
+      "fr",
+      "es"
+    ],
+    "workflows_tested": [
+      "new_user_onboarding",
+      "hosting_bundle_purchase",
+      "domain_registration",
+      "admin_operations",
+      "language_switching_en_to_fr",
+      "language_switching_en_to_es",
+      "language_switching_fr_to_en",
+      "language_switching_fr_to_es",
+      "language_switching_es_to_en",
+      "language_switching_es_to_fr"
+    ]
+  },
+  "workflow_coverage": {
+    "new_user_onboarding": {
+      "languages_tested": 3,
+      "languages_successful": 0,
+      "success_rate": 0.0,
+      "successful_languages": []
+    },
+    "hosting_bundle_purchase": {
+      "languages_tested": 3,
+      "languages_successful": 3,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "en",
+        "fr",
+        "es"
+      ]
+    },
+    "domain_registration": {
+      "languages_tested": 3,
+      "languages_successful": 3,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "en",
+        "fr",
+        "es"
+      ]
+    },
+    "admin_operations": {
+      "languages_tested": 2,
+      "languages_successful": 0,
+      "success_rate": 0.0,
+      "successful_languages": []
+    },
+    "language_switching_en_to_fr": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "fr"
+      ]
+    },
+    "language_switching_en_to_es": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "es"
+      ]
+    },
+    "language_switching_fr_to_en": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "en"
+      ]
+    },
+    "language_switching_fr_to_es": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "es"
+      ]
+    },
+    "language_switching_es_to_en": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "en"
+      ]
+    },
+    "language_switching_es_to_fr": {
+      "languages_tested": 1,
+      "languages_successful": 1,
+      "success_rate": 100.0,
+      "successful_languages": [
+        "fr"
+      ]
+    }
+  },
+  "detailed_results": {
+    "new_user_onboarding": {
+      "en": {
+        "status": "error",
+        "welcome_message_works": true,
+        "language_detected": true,
+        "wallet_accessible": false,
+        "localization_working": true
+      },
+      "fr": {
+        "status": "error",
+        "welcome_message_works": true,
+        "language_detected": true,
+        "wallet_accessible": false,
+        "localization_working": true
+      },
+      "es": {
+        "status": "error",
+        "welcome_message_works": true,
+        "language_detected": true,
+        "wallet_accessible": false,
+        "localization_working": true
+      }
+    },
+    "hosting_bundle_purchase": {
+      "en": {
+        "status": "success",
+        "payment_confirmation": true,
+        "payment_details": true,
+        "hosting_activation": true,
+        "html_safe": true,
+        "variables_substituted": true
+      },
+      "fr": {
+        "status": "success",
+        "payment_confirmation": true,
+        "payment_details": true,
+        "hosting_activation": true,
+        "html_safe": true,
+        "variables_substituted": true
+      },
+      "es": {
+        "status": "success",
+        "payment_confirmation": true,
+        "payment_details": true,
+        "hosting_activation": true,
+        "html_safe": true,
+        "variables_substituted": true
+      }
+    },
+    "domain_registration": {
+      "en": {
+        "status": "success",
+        "search_interface": true,
+        "availability_check": true,
+        "registration_success": true,
+        "domain_details": true,
+        "dns_management": true,
+        "html_safe": true
+      },
+      "fr": {
+        "status": "success",
+        "search_interface": true,
+        "availability_check": true,
+        "registration_success": true,
+        "domain_details": true,
+        "dns_management": true,
+        "html_safe": true
+      },
+      "es": {
+        "status": "success",
+        "search_interface": true,
+        "availability_check": true,
+        "registration_success": true,
+        "domain_details": true,
+        "dns_management": true,
+        "html_safe": true
+      }
+    },
+    "admin_operations": {
+      "fr": {
+        "status": "error",
+        "admin_language_context": true,
+        "user_notification_context": true,
+        "context_separation": true,
+        "admin_interface_works": false,
+        "user_notifications_work": true
+      },
+      "es": {
+        "status": "error",
+        "admin_language_context": true,
+        "user_notification_context": true,
+        "context_separation": true,
+        "admin_interface_works": false,
+        "user_notifications_work": true
+      }
+    },
+    "language_switching_en_to_fr": {
+      "fr": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "en",
+        "to_language": "fr"
+      }
+    },
+    "language_switching_en_to_es": {
+      "es": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "en",
+        "to_language": "es"
+      }
+    },
+    "language_switching_fr_to_en": {
+      "en": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "fr",
+        "to_language": "en"
+      }
+    },
+    "language_switching_fr_to_es": {
+      "es": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "fr",
+        "to_language": "es"
+      }
+    },
+    "language_switching_es_to_en": {
+      "en": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "es",
+        "to_language": "en"
+      }
+    },
+    "language_switching_es_to_fr": {
+      "fr": {
+        "status": "success",
+        "switch_succeeded": true,
+        "immediate_update": true,
+        "confirmation_message": true,
+        "persistence_working": true,
+        "from_language": "es",
+        "to_language": "fr"
+      }
+    }
+  },
+  "critical_issues": [],
+  "recommendations": [
+    "⚠️ Fix new_user_onboarding workflow for languages: en, fr, es",
+    "⚠️ Fix admin_operations workflow for languages: fr, es"
+  ]
+}

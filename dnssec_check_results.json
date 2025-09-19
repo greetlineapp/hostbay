@@ -1,0 +1,40 @@
+{
+  "domain": "tdonlinegateway.com",
+  "timestamp": "31128.145406891",
+  "ds_check": {
+    "has_ds_records": false,
+    "ds_records": [],
+    "count": 0,
+    "status": "NO_DNSSEC"
+  },
+  "dnskey_check": {
+    "has_dnskey_records": false,
+    "dnskey_records": [],
+    "total_count": 0,
+    "ksk_count": 0,
+    "zsk_count": 0,
+    "status": "ZONE_UNSIGNED"
+  },
+  "rrsig_check": {
+    "has_rrsig_records": false,
+    "rrsig_records": [],
+    "count": 0,
+    "status": "RECORDS_UNSIGNED"
+  },
+  "nameserver_check": {
+    "nameservers": [
+      "leanna.ns.cloudflare.com.",
+      "anderson.ns.cloudflare.com."
+    ],
+    "count": 2,
+    "using_cloudflare": true,
+    "status": "SUCCESS"
+  },
+  "overall_status": "NOT_SIGNED",
+  "risk_level": "LOW",
+  "risk_assessment": "LOW: No DS records found - nameserver change should be safe",
+  "recommendations": [
+    "\u2705 No DNSSEC detected - nameserver change should be safe",
+    "\ud83c\udf24\ufe0f Already using Cloudflare nameservers - check Cloudflare DNSSEC settings"
+  ]
+}

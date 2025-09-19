@@ -1,0 +1,793 @@
+{
+  "welcome": {
+    "title": "Bienvenue sur {platform_name} !",
+    "tagline": "{platform_tagline}",
+    "what_to_do": "Que souhaitez-vous faire ?",
+    "greeting": "🚀 <b>Bienvenue sur {platform_name} !</b>\n\n{platform_tagline}\n\n📢 Suivez {hostbay_channel} pour mises à jour & tutoriels\n\nQue souhaitez-vous faire ?"
+  },
+  "commands": {
+    "start": "Commencer à utiliser le bot",
+    "help": "Obtenir de l'aide et du support",
+    "wallet": "Vérifier le solde du portefeuille",
+    "domains": "Gérer les domaines",
+    "dns": "Configurer les paramètres DNS",
+    "hosting": "Gérer les services d'hébergement",
+    "language": "Changer les préférences de langue"
+  },
+  "support": {
+    "title": "💬 <b>Contacter le Support</b>",
+    "channels": "🛠️ Technique : {support_contact} • 📧 Commercial : {hostbay_email}\n📢 Mises à jour : {hostbay_channel}",
+    "help_with": "<b>Aide :</b> paiements, domaines, DNS, hébergement, portefeuilles, problèmes techniques",
+    "response_time": "<b>Réponse :</b> quelques heures pendant les heures de bureau • <b>ID :</b> {user_id}"
+  },
+  "errors": {
+    "general": "Une erreur s'est produite. Veuillez réessayer.",
+    "payment_failed": "Le traitement du paiement a échoué. Veuillez réessayer ou contacter {support_contact}.",
+    "payment_expired": "Paiement expiré. Veuillez créer une nouvelle demande de paiement.",
+    "domain_registration_failed": "L'enregistrement du domaine a échoué. Veuillez réessayer.",
+    "dns_update_failed": "La mise à jour DNS a échoué. Veuillez réessayer.",
+    "hosting_setup_failed": "La configuration de l'hébergement a échoué. Veuillez contacter {support_contact}.",
+    "insufficient_funds": "Solde du portefeuille insuffisant. Veuillez ajouter des fonds pour continuer.",
+    "invalid_domain": "Nom de domaine invalide. Veuillez vérifier et réessayer.",
+    "domain_unavailable": "Le domaine n'est pas disponible pour l'enregistrement.",
+    "dns_validation_failed": "La validation de l'enregistrement DNS a échoué. Veuillez vérifier votre saisie.",
+    "service_unavailable": "Service temporairement indisponible. Veuillez réessayer dans quelques instants.",
+    "unauthorized": "Vous n'êtes pas autorisé à effectuer cette action.",
+    "not_found": "Ressource demandée introuvable.",
+    "rate_limit": "Trop de demandes. Veuillez attendre et réessayer."
+  },
+  "success": {
+    "payment_confirmed": "Paiement Confirmé !",
+    "payment_details": "Merci pour votre paiement de {amount} {currency}.\n\nVotre portefeuille {platform_name} a été crédité et vous pouvez maintenant procéder à votre commande.\n\n💰 Vérifiez votre solde avec /wallet",
+    "domain_registered": "Enregistrement de Domaine Réussi !",
+    "domain_details": "<b>{domain}</b> a été enregistré avec succès !\n\nVous pouvez maintenant :\n• Configurer les enregistrements DNS\n• Configurer l'hébergement\n• Gérer les paramètres du domaine\n\nUtilisez /dns pour configurer les paramètres DNS de votre domaine.",
+    "dns_updated": "Enregistrements DNS mis à jour avec succès",
+    "hosting_activated": "Service d'hébergement activé avec succès",
+    "language_changed": "Préférence de langue mise à jour vers {language}"
+  },
+  "payment": {
+    "title": "Paiement",
+    "amount_label": "Montant",
+    "currency_label": "Devise",
+    "address_label": "Adresse de Paiement",
+    "memo_label": "Mémo/Tag",
+    "expires_in": "Expire dans {minutes} minutes",
+    "instructions": "Envoyez exactement {amount} {currency} à l'adresse ci-dessus",
+    "qr_code": "Code QR",
+    "confirm_button": "Confirmer le Paiement",
+    "cancel_button": "Annuler",
+    "pending": "Paiement en attente... Veuillez envoyer {amount} {currency}",
+    "processing": "Traitement du paiement...",
+    "deposit_success": "Dépôt réussi ! {amount} {currency} ajouté à votre portefeuille."
+  },
+  "wallet": {
+    "title": "💰 Solde du Portefeuille",
+    "balance": "Solde : {balance} USD",
+    "add_funds": "Ajouter des Fonds",
+    "transaction_history": "Historique des Transactions",
+    "no_transactions": "Aucune transaction pour le moment",
+    "transaction_credit": "Crédit : +{amount} USD",
+    "transaction_debit": "Débit : -{amount} USD",
+    "low_balance": "Solde de portefeuille faible. Ajoutez des fonds pour continuer à utiliser les services."
+  },
+  "domains": {
+    "title": "🌐 Gestion des Domaines",
+    "register_new": "Enregistrer un Nouveau Domaine",
+    "my_domains": "Mes Domaines",
+    "search_placeholder": "Entrez le nom de domaine...",
+    "available": "Disponible",
+    "unavailable": "Non Disponible",
+    "check_availability": "Vérifier la Disponibilité",
+    "register_button": "Enregistrer le Domaine",
+    "manage_button": "Gérer",
+    "no_domains": "Vous n'avez encore enregistré aucun domaine.",
+    "registration_price": "Enregistrement : {price} USD/an",
+    "expiry_date": "Expire : {date}",
+    "auto_renew": "Renouvellement automatique activé",
+    "transfer_lock": "Verrouillage de transfert : {status}"
+  },
+  "dns": {
+    "title": "🌐 Gestion DNS",
+    "select_domain": "Sélectionner le domaine :",
+    "record_types": {
+      "A": "Enregistrement A (IPv4)",
+      "AAAA": "Enregistrement AAAA (IPv6)",
+      "CNAME": "Enregistrement CNAME (Alias)",
+      "MX": "Enregistrement MX (Mail)",
+      "TXT": "Enregistrement TXT (Texte)",
+      "NS": "Enregistrement NS (Serveur de noms)"
+    },
+    "add_record": "Ajouter un Enregistrement DNS",
+    "edit_record": "Modifier l'Enregistrement",
+    "delete_record": "Supprimer l'Enregistrement",
+    "record_name": "Nom de l'Enregistrement",
+    "record_value": "Valeur de l'Enregistrement",
+    "record_ttl": "TTL (secondes)",
+    "record_priority": "Priorité",
+    "no_records": "Aucun enregistrement DNS configuré",
+    "cloudflare_proxy": "Proxy Cloudflare",
+    "proxy_enabled": "Proxy : Activé",
+    "proxy_disabled": "Proxy : Désactivé"
+  },
+  "hosting": {
+    "title": "🖥️ Gestion de l'Hébergement",
+    "plans": "Forfaits d'Hébergement",
+    "my_services": "Mes Services",
+    "basic_plan": "Hébergement Basique",
+    "premium_plan": "Hébergement Premium",
+    "business_plan": "Hébergement Business",
+    "features": "Fonctionnalités",
+    "storage": "Stockage : {amount}GB",
+    "bandwidth": "Bande passante : {amount}GB/mois",
+    "domains": "Domaines : {count}",
+    "databases": "Bases de données : {count}",
+    "email_accounts": "Email : {count} comptes",
+    "ssl_certificate": "Certificat SSL Gratuit",
+    "activate_button": "Activer le Service",
+    "manage_button": "Gérer le Service",
+    "cpanel_access": "Accès cPanel",
+    "ftp_details": "Détails FTP",
+    "database_info": "Informations de Base de Données",
+    "bundle_purchase": "Achat du forfait d'hébergement terminé - {plan_name} activé pour {domain}",
+    "provisioning": "Provisionnement du service d'hébergement - configuration en cours pour {domain}",
+    "activated": "Service d'hébergement activé avec succès pour {domain} - accès cPanel prêt"
+  },
+  "support": {
+    "title": "💬 Contacter le Support",
+    "channels": "🛠️ Technique: {support_contact} • 📧 Commercial: {hostbay_email}\n📢 Mises à jour: {hostbay_channel}",
+    "help_with": "<b>Aide:</b> paiements, domaines, DNS, hébergement, portefeuilles, technique",
+    "response_time": "<b>Réponse:</b> quelques heures (heures ouvrables) • <b>ID:</b> {user_id}"
+  },
+  "language": {
+    "title": "🌍 Paramètres de Langue",
+    "current": "Langue actuelle : {language}",
+    "available": "Langues disponibles :",
+    "select": "Sélectionnez votre langue préférée :",
+    "changed": "Langue changée en {language}"
+  },
+  "navigation": {
+    "back": "◀️ Retour",
+    "home": "🏠 Accueil",
+    "next": "Suivant ▶️",
+    "cancel": "❌ Annuler",
+    "confirm": "✅ Confirmer",
+    "save": "💾 Sauvegarder",
+    "edit": "✏️ Modifier",
+    "delete": "🗑️ Supprimer",
+    "refresh": "🔄 Actualiser"
+  },
+  "status": {
+    "active": "Actif",
+    "inactive": "Inactif",
+    "pending": "En attente",
+    "expired": "Expiré",
+    "processing": "En cours",
+    "completed": "Terminé",
+    "failed": "Échoué",
+    "cancelled": "Annulé"
+  },
+  "time": {
+    "minutes": "{count} minute(s)",
+    "hours": "{count} heure(s)",
+    "days": "{count} jour(s)",
+    "weeks": "{count} semaine(s)",
+    "months": "{count} mois",
+    "years": "{count} année(s)"
+  },
+  "validation": {
+    "required_field": "Ce champ est requis",
+    "invalid_email": "Veuillez entrer une adresse email valide",
+    "invalid_domain": "Veuillez entrer un nom de domaine valide",
+    "invalid_ip": "Veuillez entrer une adresse IP valide",
+    "min_length": "Longueur minimale : {min} caractères",
+    "max_length": "Longueur maximale : {max} caractères"
+  },
+  "dns_validation": {
+    "ip_required": "L'adresse IP est requise",
+    "invalid_ipv4": "Adresse IPv4 requise pour les enregistrements A",
+    "invalid_ipv6": "Adresse IPv6 requise pour les enregistrements AAAA",
+    "invalid_ip_format": "Format d'adresse IP invalide",
+    "ttl_min_error": "Le TTL doit être 1 (Auto) ou plus",
+    "ttl_max_error": "Le TTL ne peut pas dépasser 86400 secondes (24 heures)",
+    "target_domain_required": "Le domaine cible est requis",
+    "invalid_domain": "La cible doit être un nom de domaine valide",
+    "mail_server_required": "Le serveur de messagerie est requis",
+    "invalid_mail_server": "Le serveur de messagerie doit être un nom de domaine valide",
+    "priority_range_error": "La priorité doit être entre 0 et 65535",
+    "txt_content_required": "Le contenu TXT est requis",
+    "txt_content_too_long": "Le contenu TXT ne peut pas dépasser 4096 caractères",
+    "proxy_restriction": "Cette adresse IP ne peut pas être proxifiée",
+    "auto_applying": "Application automatique des modifications...",
+    "auto_apply_success": "Application automatique réussie pour l'enregistrement {type} {id}",
+    "auto_apply_failed": "Échec de l'application automatique pour l'enregistrement {type} {id}: {error}"
+  },
+  "dns_management": {
+    "title": "📝 Enregistrements DNS : {domain}",
+    "no_records": "Aucun enregistrement DNS configuré",
+    "record_details": "🔍 Détails de l'Enregistrement DNS",
+    "record_not_found": "❌ Enregistrement Non Trouvé\n\nL'enregistrement DNS n'a pas pu être trouvé.",
+    "add_record": "➕ Ajouter Nouvel Enregistrement",
+    "edit_record": "✏️ Modifier l'Enregistrement",
+    "delete_record": "🗑️ Supprimer l'Enregistrement",
+    "confirm_delete": "🗑️ Confirmer la Suppression",
+    "delete_warning": "⚠️ ATTENTION : Cette action ne peut pas être annulée !",
+    "delete_confirmation": "Êtes-vous sûr de vouloir supprimer définitivement cet enregistrement DNS ?",
+    "delete_immediate_warning": "🔴 Cela supprimera immédiatement l'enregistrement de votre zone DNS.",
+    "delete_success": "✅ Enregistrement DNS Supprimé avec Succès",
+    "delete_failed": "❌ Échec de la Suppression de l'Enregistrement DNS",
+    "wizard_title": "Assistant d'Enregistrement DNS",
+    "wizard_error": "❌ Erreur de l'assistant\n\nVeuillez réessayer.",
+    "wizard_incomplete": "❌ Données Incomplètes\n\nVeuillez compléter toutes les étapes de l'assistant.",
+    "cname_conflict": "❌ Conflit CNAME\n\nImpossible de créer un CNAME pour {name} en raison d'enregistrements {types} existants.\n\nUtilisez un sous-domaine différent ou supprimez les enregistrements en conflit.",
+    "no_available_names": "❌ Aucun Nom Disponible\n\nTous les noms communs ont des enregistrements CNAME.\n\nSupprimez les enregistrements CNAME ou utilisez un sous-domaine différent.",
+    "zone_unavailable": "❌ DNS Indisponible\n\nAucune zone pour {domain}",
+    "access_denied": "❌ Accès Refusé\n\nDomaine non trouvé dans votre compte.",
+    "auto_ttl": "Auto",
+    "ttl_seconds": "{ttl} secondes",
+    "ttl_hours": "{ttl} heures",
+    "ttl_days": "{ttl} jours",
+    "proxy_enabled": "🟠 Proxifié",
+    "proxy_disabled": "⚪ Direct",
+    "deleting_record": "🗑️ Suppression de l'Enregistrement DNS...\n\nVeuillez patienter...",
+    "version_conflict": "Conflit de version détecté",
+    "version_conflict_message": "Un autre utilisateur a modifié cet enregistrement DNS. Veuillez actualiser et réessayer."
+  },
+  "dns_wizard": {
+    "a_record_title": "🅰️ Ajouter Enregistrement A ({step}/4) : {domain}",
+    "a_record_edit_title": "🅰️ Modifier Enregistrement A ({step}/4) : {domain}",
+    "cname_record_title": "🔗 Ajouter Enregistrement CNAME ({step}/3) : {domain}",
+    "txt_record_title": "📝 Ajouter Enregistrement TXT ({step}/3) : {domain}",
+    "mx_record_title": "📧 Ajouter Enregistrement MX ({step}/4) : {domain}",
+    "choose_name": "Choisissez le nom disponible :",
+    "enter_ip": "Entrez l'adresse IPv4 vers laquelle cet enregistrement doit pointer.",
+    "enter_ipv6": "Entrez l'adresse IPv6 vers laquelle cet enregistrement doit pointer.",
+    "enter_target": "Entrez le domaine cible vers lequel cet enregistrement doit pointer.",
+    "enter_content": "Entrez le contenu de l'enregistrement TXT.",
+    "enter_mail_server": "Entrez le domaine du serveur de messagerie.",
+    "select_ttl": "Sélectionnez le TTL (Time To Live) :",
+    "select_priority": "Sélectionnez la priorité (plus bas = priorité plus élevée) :",
+    "proxy_setting": "Sélectionnez le paramètre Proxy :",
+    "proxy_explanation": "🟠 Proxifié - Le trafic passe par Cloudflare (plus rapide, protégé)\n⚪ Direct - Le trafic va directement vers votre serveur",
+    "proxy_not_available": "🚫 Mode proxy non disponible pour cette IP\n\nLes adresses IP privées ne peuvent pas utiliser le mode proxy car elles ne sont pas accessibles depuis Internet.\n\nOption disponible :\n⚪ Direct - Le trafic va directement vers votre serveur",
+    "use_common_ip": "Utiliser {ip}",
+    "auto_recommended": "Auto (Recommandé)",
+    "proxied_recommended": "🟠 Proxifié (Recommandé)",
+    "direct_only": "⚪ Direct (Seule Option)",
+    "priority_high": "Élevée (10)",
+    "priority_medium": "Moyenne (20)",
+    "priority_low": "Faible (50)"
+  },
+  "hosting_management": {
+    "title": "🏠 Gestion de l'Hébergement",
+    "account_details": "📊 Détails du Compte",
+    "cpanel_login": "🔧 Connexion cPanel",
+    "usage_stats": "📈 Statistiques d'Utilisation",
+    "suspend_account": "⏸️ Suspendre le Compte",
+    "unsuspend_account": "▶️ Réactiver le Compte",
+    "restart_services": "🔄 Redémarrer les Services",
+    "account_not_found": "❌ Compte d'hébergement non trouvé ou accès refusé.",
+    "suspend_confirmation": "⚠️ Suspendre le Compte d'Hébergement",
+    "suspend_warning": "Êtes-vous sûr de vouloir suspendre ce compte d'hébergement ?\n\n⚠️ Cela désactivera immédiatement :\n• Accès au site web\n• Services de messagerie\n• Accès FTP\n• Connexions à la base de données\n\nLe compte peut être réactivé à tout moment.",
+    "suspend_success": "✅ Compte Suspendu avec Succès",
+    "suspend_success_message": "Le compte d'hébergement a été suspendu.\n\n🔴 Tous les services sont maintenant désactivés :\n• Site web : Hors ligne\n• Email : Indisponible\n• FTP : Bloqué\n• Base de données : Déconnectée\n\nUtilisez l'option de réactivation pour restaurer les services.",
+    "suspend_marked": "⚠️ Compte Marqué comme Suspendu",
+    "restart_processing": "⏳ Redémarrage des services...\n\nCela peut prendre 30-60 secondes.",
+    "restart_success": "✅ Services Redémarrés avec Succès",
+    "restart_request_processed": "⚠️ Demande de Redémarrage Traitée",
+    "checking_status": "🔍 Vérification de {domain}...",
+    "status_check": "🔍 Vérification du Statut d'Hébergement",
+    "reanalyze_nameservers": "🔄 Nouvelle analyse de la configuration des serveurs de noms...",
+    "connect_existing_domain": "🔗 Connecter un Domaine Existant",
+    "error_loading": "❌ Erreur de chargement de l'hébergement. Réessayez.",
+    "error_loading_details": "❌ Erreur de chargement des détails. Réessayez.",
+    "error_loading_credentials": "❌ Erreur de chargement des identifiants. Réessayez.",
+    "error_loading_usage": "❌ Erreur de chargement de l'utilisation. Réessayez.",
+    "cpanel_url": "🌐 URL : {url}",
+    "cpanel_username": "👤 Nom d'utilisateur : {username}",
+    "cpanel_password": "🔑 Mot de passe : {password}",
+    "cpanel_server": "🖥️ Serveur : {server}",
+    "cpanel_copy_tip": "💡 Appuyez sur n'importe quel identifiant ci-dessus pour copier dans le presse-papiers",
+    "cpanel_save_tip": "💾 Sauvegardez ces identifiants en sécurité !",
+    "usage_disk": "📦 Utilisation du Disque : {used} GB / {total} GB ({percent}%)",
+    "usage_bandwidth": "📊 Bande Passante : {used} GB / {total} GB ({percent}%)",
+    "usage_files": "📁 Fichiers : {count} / {limit}",
+    "usage_email": "📧 Comptes Email : {count} / {limit}",
+    "usage_databases": "🗂️ Bases de Données : {count} / {limit}",
+    "usage_uptime": "⏱️ Temps de Fonctionnement : {uptime}%",
+    "usage_last_updated": "🔄 Dernière Mise à Jour : {time}",
+    "usage_update_note": "💡 Les statistiques d'utilisation se mettent à jour toutes les heures.",
+    "suspending_account": "⏳ Suspension du compte d'hébergement pour <code>{domain}</code>...",
+    "unsuspending_account": "⏳ Réactivation du compte d'hébergement pour <code>{domain}</code>...",
+    "restarting_services": "⏳ Redémarrage des services pour <code>{domain}</code>...",
+    "checking_domain_status": "🔍 Vérification de {domain}..."
+  },
+  "hosting_status": {
+    "active": "✅ Votre compte d'hébergement est actif et entièrement opérationnel. Tous les services fonctionnent normalement.",
+    "suspended": "⚠️ Votre compte d'hébergement a été suspendu. Les services de site web et d'email sont actuellement indisponibles.",
+    "pending": "⏳ Votre compte d'hébergement est en cours de configuration. Cela prend généralement 10-15 minutes.",
+    "expired": "⚠️ Votre compte d'hébergement a expiré. Veuillez renouveler pour restaurer les services.",
+    "cancelled": "❌ Votre compte d'hébergement a été annulé.",
+    "unknown": "ℹ️ Informations de statut non disponibles."
+  },
+  "nameserver_config": {
+    "ready": "✅ Configuration des Serveurs de Noms : Prête\n\nVotre domaine est déjà configuré pour utiliser nos serveurs de noms d'hébergement :\n{nameservers}\n\nAprès l'achat de l'hébergement, votre domaine sera automatiquement connecté à votre nouveau compte d'hébergement.",
+    "required_unknown": "⚠️ Configuration DNS Requise\n\nAprès l'achat d'hébergement, mettez à jour les serveurs de noms de votre domaine vers :\n{nameservers}\n\nPropagation : 24-48 heures\nInstructions détaillées fournies après l'achat.",
+    "required_change": "🔧 Configuration des Serveurs de Noms Requise\n\nFournisseur Actuel : {provider}\nServeurs de Noms Actuels :\n{current}\n\nServeurs de Noms Requis pour l'Hébergement :\n{required}\n\n{instructions}\n\n⏱️ Temps de Propagation : 24-48 heures après le changement de serveurs de noms",
+    "fallback": "⚠️ Configuration des Serveurs de Noms Requise\n\nAprès l'achat de l'hébergement, vous devrez mettre à jour les serveurs de noms de votre domaine vers :\n{nameservers}\n\nNous fournirons des instructions de configuration détaillées après l'achat."
+  },
+  "nameserver_instructions": {
+    "godaddy": "Instructions GoDaddy :\n1. Connectez-vous à votre compte GoDaddy\n2. Allez dans \"Mes Produits\" → \"DNS\"\n3. Trouvez votre domaine et cliquez sur \"Gérer\"\n4. Faites défiler jusqu'à la section \"Serveurs de noms\"\n5. Sélectionnez \"J'utiliserai mes propres serveurs de noms\"\n6. Entrez : {nameservers}\n7. Cliquez sur \"Enregistrer\"",
+    "namecheap": "Instructions Namecheap :\n1. Connectez-vous à votre compte Namecheap\n2. Allez dans \"Liste des Domaines\" → trouvez votre domaine\n3. Cliquez sur \"Gérer\" à côté de votre domaine\n4. Allez dans l'onglet \"Serveurs de noms\"\n5. Sélectionnez \"DNS Personnalisé\"\n6. Entrez : {nameservers}\n7. Cliquez sur la coche pour enregistrer",
+    "google_domains": "Instructions Google Domains :\n1. Connectez-vous à votre compte Google Domains\n2. Trouvez votre domaine et cliquez sur \"Gérer\"\n3. Allez dans l'onglet \"DNS\"\n4. Faites défiler jusqu'aux \"Serveurs de noms\"\n5. Sélectionnez \"Utiliser des serveurs de noms personnalisés\"\n6. Entrez : {nameservers}\n7. Cliquez sur \"Enregistrer\"",
+    "generic": "Configuration DNS :\n1. Allez chez votre registraire\n2. Changez les serveurs de noms vers :\n{nameservers}\n3. Enregistrez et attendez la propagation\n\n💡 Aide ? Contactez le support de votre registraire."
+  },
+  "admin": {
+    "broadcast_title": "📢 Commande de Diffusion",
+    "broadcast_usage": "Utilisation : /broadcast <message>\n\nExemple : /broadcast Bonjour tout le monde ! Nouvelles fonctionnalités disponibles.\n\nSpécifications :\n• Taille du lot : 30 utilisateurs\n• Délai : 1 seconde entre les lots\n• Tentatives max : 3 essais\n• Envoie uniquement aux utilisateurs qui ont accepté les conditions",
+    "broadcast_disabled": "🚫 Commande Désactivée\n\nCette fonctionnalité est désactivée pour des raisons de sécurité.",
+    "broadcast_access_denied": "🚫 Accès Refusé\n\nTentative d'accès non autorisée enregistrée.",
+    "broadcast_failed": "❌ Échec de la Diffusion\n\nErreur critique survenue. Vérifiez les journaux pour plus de détails.",
+    "broadcast_in_progress": "📢 Diffusion en Cours...",
+    "broadcast_target_users": "👥 Utilisateurs Cibles : {count}",
+    "broadcast_current_batch": "📦 Lot Actuel : {number}",
+    "broadcast_batch_complete": "📊 Lot {number} Terminé",
+    "broadcast_sent": "✅ Envoyé : {sent}/{total}",
+    "broadcast_failed_count": "❌ Échec : {failed}",
+    "broadcast_progress": "📈 Progression Totale : {sent}/{total}",
+    "broadcast_complete": "🎯 Diffusion Terminée !",
+    "broadcast_success_rate": "📊 Taux de Réussite : {rate}%",
+    "broadcast_total_batches": "📦 Total des Lots : {count}",
+    "cancel_access_denied": "🚫 Accès Refusé\n\nSeul l'admin peut utiliser cette commande.",
+    "cancel_success": "🚫 Diffusion Annulée\n\nMode diffusion désactivé.\n\nVous pouvez démarrer une nouvelle diffusion à tout moment depuis le panneau d'administration.",
+    "cancel_no_operation": "ℹ️ Aucune Opération Active\n\nIl n'y a aucune opération active à annuler.",
+    "cancel_error": "❌ Erreur\n\nImpossible de traiter la commande d'annulation.",
+    "text_cancelled": "🚫 Diffusion Annulée\n\nMode diffusion désactivé.",
+    "text_failed": "❌ Échec de la Diffusion\n\nUne erreur s'est produite. Mode diffusion désactivé.",
+    "credit_wallet": "💳 Créditer le Portefeuille Utilisateur",
+    "admin_panel": "🔧 Panneau d'Administration Disponible"
+  },
+  "search": {
+    "title": "🔍 Recherche de Domaine",
+    "help_title": "🔍 Recherche de Domaine",
+    "help_description": "Recherchez des domaines disponibles à enregistrer.",
+    "help_usage": "Utilisation : /search domaine.com",
+    "help_note": "Incluez l'extension de domaine pour de meilleurs résultats.",
+    "searching": "🔄 Recherche de {domain}...",
+    "invalid_format": "❌ Format de Domaine Invalide\n\n{domain} n'est pas un nom de domaine valide.\n\nExemple : exemple.com",
+    "service_unavailable": "⚠️ Recherche Indisponible : {domain}\n\nService temporairement en panne. Réessayez dans quelques minutes.",
+    "available": "✅ {domain} Disponible",
+    "unavailable": "❌ {domain} Indisponible",
+    "domain_unavailable_registered": "❌ Le domaine {domain} est déjà enregistré. Essayez un nom différent.",
+    "domain_pricing_unavailable": "❌ Tarification du Domaine Indisponible\n\nImpossible d'obtenir les tarifs pour {domain}. Veuillez essayer un autre domaine ou contacter le support.",
+    "domain_already_owned": "✅ {domain} est déjà dans votre compte !\n\nSouhaitez-vous le connecter à l'hébergement à la place ?",
+    "premium_domain": "Domaine premium",
+    "standard_domain": "Domaine standard",
+    "already_registered": "Déjà enregistré. Essayez .net, .org, ou .io",
+    "contact_pricing": "Contactez pour le prix",
+    "includes_fee": "inclut {amount} de frais de service",
+    "error_searching": "❌ Erreur lors de la recherche du domaine. Veuillez réessayer."
+  },
+  "profile": {
+    "title": "👤 Informations de Profil",
+    "telegram_details": "Détails Telegram :",
+    "username": "• Nom d'utilisateur : @{username}",
+    "username_not_set": "• Nom d'utilisateur : Non défini",
+    "name": "• Nom : {name}",
+    "user_id": "• ID Utilisateur : {user_id}",
+    "account_status": "État du Compte :",
+    "wallet_balance": "💰 Solde du Portefeuille : {balance}",
+    "terms_status": "Conditions Acceptées : {status}",
+    "features": "Services Disponibles :",
+    "account_features": "Services :",
+    "feature_domains": "🌐 Enregistrement et Gestion de Domaines",
+    "feature_dns": "🔧 DNS",
+    "feature_hosting": "🏠 Hébergement",
+    "feature_crypto": "💰 Crypto",
+    "settings": "Paramètres :",
+    "setting_contact": "• Gestion des informations de contact",
+    "setting_payment": "• Préférences de paiement",
+    "setting_notifications": "• Paramètres de notification",
+    "coming_soon": "Bientôt disponible : Gestion de profil améliorée",
+    "community_engagement": "🌟 <b>Rejoignez la Communauté</b>\n\n📢 Suivez {hostbay_channel} pour mises à jour & tutoriels\n💬 Obtenez du support sur {support_contact}\n📧 Demandes commerciales : {hostbay_email}"
+  },
+  "terms": {
+    "title": "📋 Conditions - {platform_name}",
+    "content": "Services : Domaines, DNS, hébergement\nPaiements : Sécurisés, finaux\nConfidentialité : Protégée, non vendue\nUtilisation : Activités légales uniquement\nResponsabilité : Service \"tel quel\"\n\n📢 Restez informé : {hostbay_channel}\nQuestions ? Contactez {support_contact}",
+    "accepted": "✅ Conditions Acceptées\n\nBienvenue sur {platform_name} !\n\nVotre compte est maintenant actif. Commençons !",
+    "declined": "❌ Conditions Refusées\n\nVous devez accepter nos conditions pour utiliser {platform_name}.\n\nAppuyez sur /start pour réessayer.",
+    "accept_error": "❌ Erreur lors de l'acceptation des conditions. Veuillez réessayer."
+  },
+  "dashboard": {
+    "title": "🏠 Tableau de Bord {platform_name}",
+    "complete_hosting_platform": "🌐 {platform_name} - Plateforme d'Hébergement Complète",
+    "quick_actions": "Actions Rapides",
+    "welcome_back": "👋 Bon retour, {name} !",
+    "balance": "💰 Solde : {balance}",
+    "what_to_do": "Que souhaitez-vous faire aujourd'hui ?",
+    "no_domains": "🌐 Vos Domaines\n\nVous n'avez encore aucun domaine.\n\nUtilisez /search domaine.com pour trouver et enregistrer votre premier domaine !",
+    "domains_list": "🌐 Vos Domaines",
+    "more_domains": "... et {count} domaines de plus"
+  },
+  "buttons": {
+    "accept": "✅ Accepter",
+    "decline": "❌ Refuser",
+    "view_full": "📑 Voir Complet",
+    "back": "⬅️ Retour",
+    "back_to_main": "⬅️ Retour",
+    "home": "🏠 Accueil",
+    "main_menu": "🏠 Menu Principal",
+    "cancel": "❌ Annuler",
+    "confirm": "✅ Confirmer",
+    "save": "💾 Enregistrer",
+    "edit": "✏️ Modifier",
+    "delete": "🗑️ Supprimer",
+    "refresh": "🔄 Actualiser",
+    "try_again": "🔄 Réessayer",
+    "search": "🔍 Rechercher",
+    "search_domains": "🔍 Rechercher des Domaines",
+    "search_another": "🔍 Rechercher un Autre",
+    "my_domains": "🌐 Mes Domaines",
+    "register_new_domain": "🔍 Enregistrer un Nouveau Domaine",
+    "wallet": "💰 Portefeuille",
+    "hosting": "🏠 Hébergement",
+    "hosting_from_price": "🏠 Hébergement à partir de {price}$",
+    "profile": "👤 Profil",
+    "contact_support": "💬 Contacter le Support",
+    "add_funds": "💳 Ajouter des Fonds",
+    "transaction_history": "📊 Historique",
+    "manage": "⚙️ {name}",
+    "register_domain": "🛒 Enregistrer {domain}",
+    "yes_delete": "🗑️ OUI, SUPPRIMER L'ENREGISTREMENT",
+    "yes_suspend": "⚠️ Oui, Suspendre le Compte",
+    "back_to_management": "⬅️ Retour à la Gestion",
+    "back_to_my_hosting": "⬅️ Retour à Mon Hébergement",
+    "back_to_dashboard": "⬅️ Retour au Tableau de Bord",
+    "back_to_record": "⬅️ Retour à l'Enregistrement",
+    "view_records": "📝 Voir les Enregistrements Restants",
+    "add_new_record": "➕ Ajouter Nouvel Enregistrement",
+    "check_nameservers_again": "🔍 Vérifier les Serveurs de Noms à Nouveau",
+    "back_to_domain_options": "⬅️ Retour aux Options de Domaine",
+    "broadcast_message": "📢 Diffuser un Message",
+    "credit_user_wallet": "💳 Créditer le Portefeuille Utilisateur",
+    "restart_services": "🔄 Redémarrer les Services",
+    "suspend_account": "⏸️ Suspendre le Compte",
+    "unsuspend_account": "▶️ Réactiver le Compte",
+    "account_details": "📊 Détails du Compte",
+    "cpanel_login": "🔧 Connexion cPanel",
+    "usage_stats": "📈 Statistiques d'Usage",
+    "back_to_options": "⬅️ Retour aux Options",
+    "purchase_hosting": "✅ Acheter Hébergement - {price}$/mois",
+    "copy_memo": "📋 Copier le Mémo",
+    "show_qr_code": "📱 Afficher le Code QR"
+  },
+  "crypto_payment": {
+    "qr_title": "📱 QR Code de Paiement {currency}",
+    "qr_loading": "⚠️ Chargement du QR Code...",
+    "qr_unavailable": "❌ QR Code Indisponible",
+    "qr_unavailable_message": "Le QR code n'a pas pu être généré.\n\nUtilisez l'adresse de paiement ci-dessous :",
+    "payment_details": "📱 Détails de Paiement {currency}",
+    "funding_cancelled": "❌ Financement Annulé",
+    "deposit_not_found": "❌ Dépôt Non Trouvé",
+    "status_completed": "✅ Terminé",
+    "status_failed": "❌ {status}",
+    "copy_confirmation": "📋 {type} Copié !",
+    "memo_copied": "📋 Mémo Copié !"
+  },
+  "unified_hosting": {
+    "title": "🏠 Hébergement Offshore \"Never-Down\"",
+    "subtitle": "Plans :",
+    "new_domain": "🆕 Enregistrer un Nouveau Domaine",
+    "new_domain_description": "Enregistrer un nouveau domaine + pack hébergement",
+    "existing_domain": "🔗 Utiliser un Domaine Existant",
+    "existing_domain_description": "Connecter votre domaine existant à l'hébergement",
+    "hosting_only": "📱 Hébergement Seulement",
+    "hosting_only_description": "Obtenir l'hébergement sans enregistrement de domaine",
+    "processing_order": "🔄 Traitement de votre commande...",
+    "plan_not_found": "❌ Plan d'hébergement non trouvé.",
+    "checkout_title": "💳 Commande Checkout",
+    "choose_payment": "Choisissez la méthode de paiement :",
+    "insufficient_balance": "❌ Solde Insuffisant",
+    "insufficient_message": "Vous avez besoin de {amount}$ mais n'avez que {balance}$.\n\nAjoutez des fonds à votre portefeuille pour continuer.",
+    "payment_successful": "✅ Paiement Réussi !",
+    "hosting_ready": "✅ Hébergement Prêt !",
+    "hosting_ready_message": "Votre compte d'hébergement est en cours de configuration.\n\n📧 Vérifiez votre email pour les détails de connexion cPanel.\n\n⏱️ La configuration prend généralement 5-10 minutes."
+  },
+  "domain_management": {
+    "coming_soon": "⚙️ Gestion de domaine pour l'ID {domain_id} bientôt disponible !",
+    "dns_management_coming_soon": "⚙️ Gestion DNS pour l'ID {domain_id} bientôt disponible !"
+  },
+  "coming_soon": {
+    "general": "🚧 Bientôt disponible !",
+    "message": "Cette fonctionnalité est en développement et sera disponible bientôt."
+  },
+  "wizard": {
+    "invalid_step": "❌ Étape d'Assistant Invalide",
+    "invalid_step_message": "L'étape de l'assistant est invalide ou expirée."
+  },
+  "services": {
+    "cpanel": {
+      "initialization": {
+        "credentials_configured": "Les identifiants cPanel sont configurés - création réelle de compte activée",
+        "credentials_missing": "Identifiants cPanel non configurés - simulation de création de compte",
+        "service_initialized": "Service cPanel initialisé"
+      },
+      "connection": {
+        "testing": "Test de la connexion cPanel avant création du compte pour {domain}",
+        "successful": "Connexion cPanel réussie : {message}",
+        "failed": "Connexion cPanel échouée : {message}",
+        "not_configured": "Identifiants WHM non configurés"
+      },
+      "account_creation": {
+        "success": "Compte cPanel créé : {username}@{domain}",
+        "failed": "Création du compte cPanel échouée",
+        "exists": "Compte cPanel existant trouvé pour {username} sur le domaine {domain}",
+        "simulated": "Création simulée du compte cPanel : {username}@{domain}"
+      },
+      "errors": {
+        "connection_failed": "La connexion au service d'hébergement a échoué. Veuillez contacter {support_contact}.",
+        "account_creation_failed": "La création du compte d'hébergement a échoué. Veuillez contacter {support_contact}.",
+        "credentials_not_configured": "Identifiants du service d'hébergement non configurés"
+      }
+    },
+    "openprovider": {
+      "authentication": {
+        "authenticating": "Authentification avec l'API OpenProvider...",
+        "successful": "Authentification OpenProvider réussie",
+        "failed": "Authentification OpenProvider échouée",
+        "credentials_not_configured": "Identifiants OpenProvider non configurés"
+      },
+      "ip_detection": {
+        "detecting": "Détection de l'adresse IP publique via les services de secours...",
+        "successful": "Détection IP réussie : {ip_address}",
+        "failed": "Tous les services de détection IP ont échoué",
+        "using_cached": "Utilisation de l'IP en cache : {ip_address}",
+        "cache_expired": "Cache IP expiré, récupération d'une nouvelle IP"
+      },
+      "domain_availability": {
+        "checking": "Vérification de la disponibilité du domaine pour : {domain}",
+        "available": "Le domaine {domain} est disponible pour l'enregistrement",
+        "unavailable": "Le domaine {domain} n'est pas disponible",
+        "failed": "Vérification de disponibilité du domaine échouée"
+      },
+      "domain_registration": {
+        "registering": "Enregistrement du domaine {domain} avec OpenProvider",
+        "successful": "Domaine {domain} enregistré avec succès",
+        "failed": "Enregistrement du domaine échoué : {error}",
+        "already_registered": "Domaine déjà enregistré"
+      },
+      "errors": {
+        "api_error": "Erreur API du service de domaine : {message}",
+        "connection_failed": "Impossible de se connecter au service d'enregistrement de domaine",
+        "invalid_domain": "Format de domaine invalide fourni"
+      }
+    },
+    "cloudflare": {
+      "zone_creation": {
+        "creating": "Création de la zone Cloudflare pour : {domain}",
+        "successful": "Zone Cloudflare créée avec succès",
+        "failed": "Création de la zone Cloudflare échouée",
+        "exists": "La zone existe déjà dans Cloudflare pour {domain}"
+      },
+      "dns_records": {
+        "creating": "Création de l'enregistrement DNS : {type} {name}",
+        "updating": "Mise à jour de l'enregistrement DNS : {type} {name}",
+        "successful": "{operation} de l'enregistrement DNS réussie",
+        "failed": "Opération d'enregistrement DNS échouée : {error}"
+      },
+      "connection": {
+        "testing": "Test de la connectivité API Cloudflare",
+        "successful": "API connectée avec succès",
+        "failed": "Connexion API Cloudflare échouée",
+        "credentials_not_configured": "Identifiants Cloudflare non configurés"
+      },
+      "errors": {
+        "api_error": "Erreur du service DNS : {message}",
+        "zone_creation_failed": "Création de la zone DNS échouée. Veuillez contacter {support_contact}.",
+        "record_update_failed": "Mise à jour de l'enregistrement DNS échouée. Veuillez réessayer."
+      }
+    },
+    "hosting_orchestrator": {
+      "bundle_processing": {
+        "starting": "Démarrage du traitement du pack hébergement pour {domain}",
+        "payment_confirmed": "✅ <b>Paiement Confirmé</b>\n💰 {amount}$ de {crypto_amount} {crypto_currency}\n\n🚀 <b>Configuration de {domain}</b>\n🔄 Création de la zone DNS...\n⏳ Provisioning de l'hébergement...\n<i>Prend 2-3 minutes</i>",
+        "hosting_validation": "Validation des capacités d'hébergement pour {domain}",
+        "domain_registration": "Enregistrement du domaine pour le pack - {domain}",
+        "hosting_provisioning": "Création du compte d'hébergement pour le pack - {domain}",
+        "dns_update": "Mise à jour de l'enregistrement DNS A avec l'IP du serveur pour {domain}",
+        "completed": "Traitement du pack terminé pour la commande {order_id}"
+      },
+      "success_notifications": {
+        "bundle_success": "🎉 <b>Pack Hébergement Prêt !</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ ✅\n🔒 Domaine enregistré\n🏠 Hébergement actif\n📧 Détails de connexion envoyés\n\n• 🔧 Gérer DNS : /domains\n• 💳 Voir portefeuille : /wallet\n\nVotre site web est prêt ! 🚀",
+        "hosting_ready": "Compte d'hébergement créé avec succès pour {domain}"
+      },
+      "error_messages": {
+        "bundle_failure": "⚠️ <b>Configuration Échouée</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ ✅ reçu\n❌ {error}\n\n• 💰 Le paiement sera remboursé\n• 📧 Contactez @{support_contact}\n\n💳 /wallet",
+        "hosting_validation_failed": "Validation de l'hébergement échouée : {error}. Le remboursement sera traité.",
+        "domain_registration_failed": "Enregistrement du domaine échoué : {error}",
+        "hosting_provisioning_failed": "Provisioning de l'hébergement échoué : {error}",
+        "no_intent_found": "Aucune intention d'hébergement valide trouvée pour la commande {order_id}",
+        "requires_refund": "L'échec du pack nécessite un traitement de remboursement"
+      }
+    },
+    "registration_orchestrator": {
+      "progress_messages": {
+        "payment_confirmed": "✅ <b>Paiement Confirmé</b>\n💰 {amount}$ de {crypto_amount} {crypto_currency}\n\n🚀 <b>Enregistrement de {domain}</b>\n🔄 Création de la zone DNS...\n⏳ Enregistrement du domaine...\n<i>Prend 30-60 secondes</i>",
+        "zone_creation": "Étape 1 : Zone DNS créée",
+        "domain_registration": "Étape 2 : Enregistrement auprès du fournisseur...",
+        "finalizing": "Étape finale..."
+      },
+      "success_messages": {
+        "registration_complete": "🎉 <b>Domaine Enregistré !</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ ✅\n🔒 Enregistré et Actif\n🌐 DNS : Cloudflare\n📍 {nameservers}\n\n• 🔧 Gérer DNS : /domains\n• 🏠 Ajouter hébergement : /hosting\n• 💳 Voir portefeuille : /wallet\n\nDomaine prêt à utiliser ! 🚀"
+      },
+      "error_messages": {
+        "registration_failed": "⚠️ <b>Enregistrement Échoué</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ ✅ reçu\n❌ {error}\n\n• 🔄 Essayez un autre domaine\n• 💰 Le paiement sera remboursé\n• 📧 Contactez @{support_contact}\n\n💳 /wallet",
+        "cloudflare_failed": "Création de la zone DNS échouée : {error}",
+        "provider_failed": "Enregistrement du domaine échoué : {error}",
+        "finalization_failed": "Finalisation de la base de données échouée : {error}",
+        "already_claimed": "Enregistrement du domaine déjà réclamé/terminé"
+      }
+    },
+    "renewal_processor": {
+      "warnings": {
+        "renewal_due": "💰 <b>Renouvellement Bientôt Dû</b>\n\n🌐 <code>{domain}</code>\n📅 Dû : {due_date}\n💰 Coût : {amount}$\n\n💳 Solde : {balance}$\n\n{status_message}\n\n💳 /wallet",
+        "insufficient_funds": "⚠️ Fonds insuffisants pour le renouvellement\n💰 Ajoutez {needed}$ pour continuer",
+        "grace_period": "⚠️ <b>Renouvellement En Retard</b>\n\n🌐 <code>{domain}</code>\n⏰ Période de grâce : {days} jours restants\n💰 {amount}$ nécessaires\n\n💳 Ajouter fonds : /wallet",
+        "final_warning": "🚨 <b>Avertissement Final</b>\n\n🌐 <code>{domain}</code>\n⏰ Le service se suspend dans 24 heures\n💰 {amount}$ nécessaires\n\n💳 Urgent : Ajoutez des fonds maintenant"
+      },
+      "notifications": {
+        "renewal_successful": "✅ <b>Renouvelé avec Succès</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ débité\n📅 Prochaine facturation : {next_date}\n\n💳 Solde : {balance}$",
+        "payment_failed": "💸 <b>Renouvellement Échoué</b>\n\n🌐 <code>{domain}</code>\n💰 Nécessaire : {amount}$\n💳 Solde : {balance}$\n⏰ Période de grâce : {grace_days} jours\n\n💳 Ajouter fonds : /wallet",
+        "service_suspended": "⚠️ <b>Service Suspendu</b>\n\n🌐 <code>{domain}</code>\n💰 {amount}$ nécessaires pour restaurer\n⏰ Suspendu pour non-paiement\n\n💳 Ajouter fonds : /wallet"
+      },
+      "status": {
+        "processing": "Traitement du renouvellement pour l'abonnement {subscription_id}",
+        "no_renewals": "Aucun abonnement d'hébergement ne nécessite de traitement de renouvellement",
+        "batch_processing": "Traitement du lot de renouvellement {batch_number}",
+        "completed": "Traitement du renouvellement terminé"
+      },
+      "errors": {
+        "processing_failed": "Traitement du renouvellement échoué : {error}",
+        "financial_blocked": "Renouvellement bloqué : Opérations financières non autorisées",
+        "invalid_cost": "Coût de renouvellement invalide : {amount}$",
+        "atomic_failure": "Traitement atomique du renouvellement échoué"
+      }
+    },
+    "payment_providers": {
+      "blockbee": {
+        "initialization": "Service BlockBee initialisé avec clé API",
+        "no_key": "Service BlockBee initialisé (aucune clé API configurée)",
+        "address_created": "BlockBee a créé l'adresse de paiement pour {currency} : {address}",
+        "address_failed": "Création d'adresse de paiement BlockBee échouée",
+        "refund_logged": "Demande de remboursement BlockBee enregistrée : {address} - {amount}$",
+        "status_check_failed": "Vérification du statut BlockBee échouée",
+        "not_configured": "Service BlockBee non configuré"
+      },
+      "dynopay": {
+        "initialization": "Service DynoPay initialisé avec clé API et token de portefeuille",
+        "missing_credentials": "Service DynoPay initialisé (identifiants manquants)",
+        "address_created": "DynoPay a créé l'adresse de paiement pour {currency} : {address}",
+        "address_failed": "Création d'adresse de paiement DynoPay échouée",
+        "refund_processed": "Remboursement DynoPay traité : {payment_id}",
+        "refund_failed": "Traitement du remboursement DynoPay échoué",
+        "amount_adjusted": "DynoPay : Montant ajusté à {amount}$ USD (minimum requis)",
+        "not_configured": "Service DynoPay non configuré"
+      },
+      "errors": {
+        "service_unavailable": "Service de paiement temporairement indisponible. Veuillez réessayer.",
+        "address_creation_failed": "Création d'adresse de paiement échouée. Veuillez contacter {support_contact}.",
+        "refund_failed": "Traitement du remboursement échoué. Veuillez contacter {support_contact}.",
+        "status_check_failed": "Vérification du statut de paiement échouée. Veuillez réessayer."
+      }
+    },
+    "exchange_rates": {
+      "cache": {
+        "hit": "Cache TOUCHÉ : {from_currency}/{to_currency}",
+        "miss": "Cache MANQUÉ : récupération {from_currency}/{to_currency} depuis l'API",
+        "invalidated": "Cache des taux de change invalidé : {count} entrées supprimées"
+      },
+      "api": {
+        "primary_success": "API principale : {from_currency}/{to_currency}",
+        "fallback_used": "API principale échouée, utilisation du secours pour {from_currency}/{to_currency}",
+        "all_failed": "Toutes les APIs de taux de change ont échoué, utilisation du secours : {from_currency}/{to_currency}",
+        "bounds_exceeded": "Taux {rate} pour {from_currency}/{to_currency} hors des limites attendues"
+      },
+      "errors": {
+        "api_unavailable": "Service de taux de change temporairement indisponible",
+        "invalid_currency": "Paire de devises invalide : {from_currency}/{to_currency}",
+        "rate_fetch_failed": "Impossible de récupérer les taux de change actuels"
+      }
+    },
+    "common": {
+      "status": {
+        "initializing": "Initialisation du service {service}...",
+        "connecting": "Connexion à {service}...",
+        "processing": "Traitement de la demande...",
+        "completed": "Opération terminée avec succès",
+        "failed": "Opération échouée : {error}"
+      },
+      "errors": {
+        "service_unavailable": "Service temporairement indisponible. Veuillez réessayer dans quelques instants.",
+        "connection_failed": "Connexion échouée. Veuillez vérifier votre connexion réseau.",
+        "authentication_failed": "Authentification échouée. Veuillez contacter {support_contact}.",
+        "invalid_request": "Format de demande invalide",
+        "timeout": "Demande expirée. Veuillez réessayer.",
+        "unknown_error": "Une erreur inattendue s'est produite. Veuillez contacter {support_contact}."
+      }
+    },
+    "admin": {
+      "access": {
+        "denied": "❌ Accès Refusé",
+        "restricted": "Cette commande est réservée aux administrateurs uniquement.",
+        "unauthorized_attempt": "🚫 SÉCURITÉ : L'utilisateur non-admin {user_id} a tenté d'utiliser la commande {command}"
+      },
+      "commands": {
+        "credit_wallet": {
+          "usage": "❌ Usage Invalide\n\n<b>Usage :</b> /credit_wallet <user_id> <montant>\n<b>Exemple :</b> /credit_wallet 123456789 50.00\n\n• user_id : ID utilisateur Telegram\n• montant : Montant USD à créditer (max 10 000 $)",
+          "invalid_amount": "❌ Montant Invalide\n\nLe montant doit être positif.",
+          "amount_too_large": "❌ Montant Trop Élevé\n\nLe montant maximum de crédit est de 10 000,00 $ par transaction.",
+          "user_not_found": "❌ Utilisateur Introuvable\n\nL'ID utilisateur {user_id} n'a pas été trouvé dans la base de données.\nL'utilisateur doit avoir utilisé le bot au moins une fois.",
+          "credit_successful": "✅ <b>Crédit Réussi</b>\n\n<b>Utilisateur :</b> {display_name} (@{username})\n<b>Montant :</b> {amount} $ USD\n<b>Nouveau Solde :</b> {new_balance} $ USD\n\n<b>ID Transaction :</b> <code>{transaction_id}</code>\n<b>Admin :</b> {admin_name}",
+          "credit_failed": "❌ Crédit Échoué\n\nImpossible de créditer le portefeuille. Vérifiez les logs pour plus de détails.",
+          "invalid_input": "❌ Entrée Invalide\n\nVeuillez vérifier le format de votre commande :\n• L'ID utilisateur doit être un nombre\n• Le montant doit être un nombre décimal valide",
+          "system_error": "❌ Erreur Système\n\nUne erreur inattendue s'est produite. Veuillez vérifier le format de la commande et réessayer."
+        },
+        "broadcast": {
+          "usage": "❌ Message Manquant\n\n<b>Usage :</b> /broadcast <message>\n<b>Exemple :</b> /broadcast 🚀 Nouvelles fonctionnalités disponibles ! Découvrez-les dans le bot.`",
+          "empty_message": "❌ Message Vide\n\nLe message de diffusion ne peut pas être vide.",
+          "failed": "❌ Diffusion Échouée\n\nErreur critique survenue. Vérifiez les logs pour plus de détails.",
+          "no_recipients": "❌ Aucun Destinataire\n\nAucun utilisateur trouvé ayant accepté les conditions."
+        }
+      },
+      "broadcast": {
+        "title": "📢 <b>Diffusion en cours...</b>",
+        "progress": "📢 <b>Diffusion en cours...</b>\n\n<b>Message :</b> {message_preview}\n<b>Progression :</b> {sent}/{total} ({percentage}%)\n<b>Envoyés :</b> {sent} | <b>Échecs :</b> {failed}",
+        "complete": "✅ <b>Diffusion Terminée</b>\n\n<b>Message :</b> {message_preview}\n<b>Total Destinataires :</b> {total}\n<b>Envoyés avec Succès :</b> {sent}\n<b>Échecs :</b> {failed}\n<b>Taux de Réussite :</b> {success_rate}%",
+        "status_starting": "Démarrage de la diffusion...",
+        "status_processing": "Traitement en cours...",
+        "broadcast_message_header": "📢 <b>Message de Diffusion</b>",
+        "ready": "📢 {bold_text}\n\n✅ {bold_text_ready}\n\n{bold_text_steps}\n1. {bold_text_type} comme votre prochain message\n2. Ou utilisez la commande /broadcast &lt;message&gt;\n3. Envoyez /cancel pour annuler le mode diffusion\n\n{bold_text_specs}\n• Taille du lot : 30 utilisateurs\n• Délai : 1 seconde entre les lots\n• Tentatives max : 3 essais\n• Envoi uniquement aux utilisateurs ayant accepté les conditions\n\n{bold_text_status} 🟢 En attente de votre message de diffusion...",
+        "cancelled": "🚫 {bold_text}\n\nLe mode diffusion a été désactivé.\n\nVous pouvez démarrer une nouvelle diffusion à tout moment depuis le panneau admin."
+      },
+      "credit": {
+        "search_prompt": "🔧 <b>Admin : Créditer Portefeuille Utilisateur</b>\n\nEntrez l'<b>ID Utilisateur</b> ou le <b>@nom_utilisateur</b> de l'utilisateur que vous voulez créditer :\n\nExemples :\n• ID Utilisateur : 1234567890\n• Nom d'utilisateur : @johndoe\n\nRépondez avec l'identifiant utilisateur pour le rechercher.\nTapez /cancel pour quitter.",
+        "user_not_found_detailed": "❌ <b>Utilisateur Introuvable</b>\n\nImpossible de trouver l'utilisateur : {user_input}\n\nVeuillez vérifier :\n• L'ID utilisateur est correct (ex : 1234567890)\n• Le nom d'utilisateur est correct (ex : @johndoe)\n• L'utilisateur a utilisé le bot auparavant\n\nEssayez à nouveau avec un identifiant différent :",
+        "user_found": "✅ <b>Utilisateur Trouvé</b>\n\n<b>Nom :</b> {display_name}\n<b>Nom d'utilisateur :</b> {username_display}\n<b>ID Utilisateur :</b> <code>{user_id}</code>\n<b>Solde Actuel :</b> {balance}\n\nEntrez le <b>montant en USD</b> à créditer au portefeuille de cet utilisateur :\n\nExemples : 25.00, 100, 50.50",
+        "invalid_amount_detailed": "❌ <b>Montant Invalide</b>\n\n{amount} n'est pas un montant valide.\n\nVeuillez entrer un montant valide en USD :\n• Doit être un nombre positif\n• Maximum 10 000,00 $\n• Exemples : 25.00, 100, 50.50",
+        "processing": "⏳ Traitement de la transaction de crédit...",
+        "confirm_transaction": "⚠️ <b>Confirmer la Transaction de Crédit</b>\n\n<b>Utilisateur :</b> {display_name} ({username_display})\n<b>ID Utilisateur :</b> <code>{user_id}</code>\n\n<b>Solde Actuel :</b> {current_balance}\n<b>Montant du Crédit :</b> {credit_amount}\n<b>Nouveau Solde :</b> {new_balance}\n\n⚠️ <b>Cette action ne peut pas être annulée !</b>\n\nÊtes-vous sûr de vouloir créditer ce montant ?",
+        "transaction_successful": "✅ <b>Transaction de Crédit Réussie</b>\n\n<b>Utilisateur :</b> {display_name} ({username_display})\n<b>Montant Crédité :</b> {amount}\n<b>Nouveau Solde :</b> {new_balance}\n\nTransaction terminée avec succès !\nLe portefeuille de l'utilisateur a été crédité.\n\n<b>ID Transaction :</b> <code>{transaction_id}</code>\n<b>Admin :</b> {admin_name}",
+        "transaction_failed": "❌ <b>Crédit Échoué</b>\n\nLa transaction n'a pas pu être terminée. Veuillez réessayer ou contacter le support."
+      },
+      "notifications": {
+        "user_credit": "🎉 <b>Crédit Portefeuille : {amount}</b>\n\nNouveau Solde : {new_balance}"
+      },
+      "cancel": {
+        "success": "✅ <b>Annulé</b>\n\nSorti de : {operations}",
+        "no_operations": "ℹ️ <b>Aucune Opération Active</b>\n\nAucune opération admin à annuler.",
+        "error": "❌ Erreur\n\nImpossible de traiter la commande d'annulation."
+      },
+      "errors": {
+        "processing_failed": "❌ Processus de Crédit Échoué\n\nUne erreur s'est produite. Mode crédit désactivé.",
+        "search_failed": "❌ Erreur lors de la recherche d'utilisateur. Veuillez réessayer.",
+        "amount_processing_failed": "❌ Erreur lors du traitement du montant de crédit. Veuillez réessayer.",
+        "execution_failed": "❌ Erreur lors du traitement de la transaction de crédit. Veuillez réessayer.",
+        "broadcast_interface_failed": "❌ Erreur lors du chargement de l'interface de diffusion. Veuillez réessayer.",
+        "broadcast_cancel_failed": "❌ Erreur\n\nImpossible d'annuler la diffusion.",
+        "broadcast_text_failed": "❌ Diffusion Échouée\n\nUne erreur s'est produite. Mode diffusion désactivé."
+      },
+      "buttons": {
+        "cancel_broadcast": "🚫 Annuler la Diffusion",
+        "back_to_dashboard": "⬅️ Retour au Tableau de Bord",
+        "cancel": "❌ Annuler",
+        "try_again": "🔄 Réessayer",
+        "confirm_credit": "✅ Confirmer le Crédit",
+        "credit_another_user": "💳 Créditer un Autre Utilisateur",
+        "back_to_dashboard_stats": "📊 Retour au Tableau de Bord"
+      },
+      "status": {
+        "broadcast_mode": "mode diffusion",
+        "credit_wallet_mode": "mode crédit portefeuille"
+      }
+    }
+  }
+}

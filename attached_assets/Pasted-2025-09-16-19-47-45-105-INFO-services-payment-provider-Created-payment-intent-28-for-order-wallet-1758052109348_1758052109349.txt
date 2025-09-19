@@ -1,0 +1,18 @@
+2025-09-16 19:47:45,105 INFO services.payment_provider: ✅ Created payment intent 28 for order wallet_usdt_trc20_5590563715_1758052064
+2025-09-16 19:47:45,105 INFO services.payment_provider: ✅ Using DynoPay as primary payment provider
+2025-09-16 19:47:45,217 INFO database: 🔒 Successfully claimed intent 28 for address creation
+2025-09-16 19:47:45,330 INFO database: 🔒 Created provider claim for dynopay on intent 28
+2025-09-16 19:47:45,330 INFO services.payment_provider: 🔒 ATOMIC: Successfully claimed intent 28 - proceeding with address creation
+2025-09-16 19:47:45,330 INFO services.dynopay: 💰 DynoPay: Adjusted amount to $5.0 USD (minimum required)
+2025-09-16 19:47:45,330 INFO services.dynopay: 💰 DynoPay: Using amount $5.0 USD for USDT_TRC20
+2025-09-16 19:47:45,675 ERROR services.dynopay: ❌ DynoPay API error: 400 - {"message":"Please enter proper values!","errors":[{"key":"currency","error":"\"currency\" must be one of [BTC, LTC, DOGE, ETH, USDT-ERC20, USDT-TRC20, BSC, TRX, BCH]"}]}
+2025-09-16 19:47:45,675 INFO services.payment_provider: ✅ Using BlockBee as backup payment provider
+2025-09-16 19:47:45,675 INFO services.blockbee: 🔧 BlockBee service initialized with API key
+2025-09-16 19:47:46,344 ERROR services.blockbee: ❌ BlockBee API error: 400 - {"status": "error", "error": "Address not set on admin panel and API does not have override permission"}
+2025-09-16 19:47:46,577 INFO database: ⚠️ Released intent 28 claim due to failure
+2025-09-16 19:47:46,577 ERROR services.payment_provider: ❌ ATOMIC: All payment providers failed to create payment address for intent 28
+2025-09-16 19:47:46,577 INFO handlers: Attempting message edit for user 5590563715, message 5590563715_1747
+2025-09-16 19:47:46,577 INFO handlers: Executing message edit for user 5590563715
+2025-09-16 19:47:46,841 INFO handlers: Message edit successful for user 5590563715
+2025-09-16 19:47:46,841 INFO webhook_handler: ✅ Telegram update processed successfully: 786427706
+2025-09-16 19:47:57,887 INFO bot: ⏰ Bot webhook server running - ready to 

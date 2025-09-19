@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "total_workflow_tests": 0,
+    "successful_workflows": 0,
+    "failed_workflows": 0,
+    "success_rate": 0,
+    "production_ready": false,
+    "critical_issues_count": 4,
+    "test_timestamp": "2025-09-18T10:11:11.739691"
+  },
+  "production_readiness": {
+    "ready_for_deployment": false,
+    "blocking_issues": [
+      "Test setup failed for en: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+      "Test setup failed for fr: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+      "Test setup failed for es: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+      "Workflow testing failed: 'en'"
+    ],
+    "languages_tested": [
+      "en",
+      "fr",
+      "es"
+    ],
+    "workflows_tested": []
+  },
+  "workflow_coverage": {},
+  "detailed_results": {},
+  "critical_issues": [
+    "Test setup failed for en: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+    "Test setup failed for fr: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+    "Test setup failed for es: credit_user_wallet() missing 2 required positional arguments: 'txid' and 'order_id'",
+    "Workflow testing failed: 'en'"
+  ],
+  "recommendations": [
+    "🚨 CRITICAL: Resolve all critical workflow issues before deployment",
+    "✅ All critical workflows working correctly",
+    "🚀 System ready for French and Spanish market deployment",
+    "💡 Consider additional user acceptance testing"
+  ]
+}

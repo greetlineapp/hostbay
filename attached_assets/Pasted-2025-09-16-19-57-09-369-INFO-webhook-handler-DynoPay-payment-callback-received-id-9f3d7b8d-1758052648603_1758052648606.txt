@@ -1,0 +1,12 @@
+2025-09-16 19:57:09,369 INFO webhook_handler: 📦 DynoPay payment callback received: {'id': '9f3d7b8d-08d9-4f89-aa5b-27f41f9f4a2b', 'payment_mode': 'CRYPTO', 'base_amount': '10.77', 'base_currency': 'USD', 'paid_amount': '0.002400', 'paid_currency': 'ETH', 'transaction_reference': '0x810dd6094aa44c6f74da11bc4078a203d81398f6f9d333ff4ef36948e70c9552', 'transaction_type': 'PAYMENT', 'transaction_details': 'Made payment for crypto_payment on Nomadly1', 'status': 'successful', 'meta_data': {'product_name': 'crypto_payment', 'refId': 'wallet_eth_5590563715_1758052562', 'user_id': '8', 'order_id': 'wallet_eth_5590563715_1758052562', 'original_amount': 5, 'wallet_deposit': False}}
+2025-09-16 19:57:09,370 INFO database: Recycling connection due to age=84.1s idle=63.9s
+2025-09-16 19:57:09,860 INFO webhook_handler: ✅ IDEMPOTENCY: New webhook callback recorded for dynopay 9f3d7b8d-08d9-4f89-aa5b-27f41f9f4a2b (order wallet_eth_5590563715_1758052562)
+2025-09-16 19:57:09,860 INFO webhook_handler: 🔒 DYNOPAY AUTH: Validating webhook data for order wallet_eth_5590563715_1758052562
+2025-09-16 19:57:09,860 INFO webhook_handler: ✅ DYNOPAY AUTH: Webhook validation successful for order wallet_eth_5590563715_1758052562
+2025-09-16 19:57:09,860 INFO webhook_handler: 💰 Authenticated payment wallet_eth_5590563715_1758052562 status: successful, confirmations: 1, amount: 10.77, value_coin: 0.0024, txid: 0x810dd6094aa44c...
+2025-09-16 19:57:10,093 ERROR database: ❌ Error registering webhook callback: column "provider" of relation "webhook_callbacks" does not exist
+LINE 2: ...n_count, callback_type, status, txid, amount_usd, provider, ...
+                                                             ^
+
+2025-09-16 19:57:10,094 INFO webhook_handler: 🚫 WEBHOOK IDEMPOTENCY: Duplicate wallet deposit callback ignored - wallet_eth_5590563715_1758052562:1
+2025-09-16 19:57:10,094 INFO webhook_handler: Webhook: "POST /webhook/dynopay?order_id=wallet_eth_5590563715_1758052562&auth_token=8XaIMt2yzuzdlUwQMBnaXOHVRB0A2fGM_IpCKrU3i9o HTTP/1.1" 200 -

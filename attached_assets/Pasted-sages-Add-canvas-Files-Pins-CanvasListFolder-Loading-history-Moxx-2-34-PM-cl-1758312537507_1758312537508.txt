@@ -1,0 +1,210 @@
+sages
+
+Add canvas
+
+Files
+
+Pins
+
+CanvasListFolder
+Loading history…
+
+
+Moxx
+  2:34 PM
+:clipboard: Terms - Hostbay
+
+Services: Domains, DNS, hosting
+Payments: Secure, final
+Privacy: Protected, not sold
+Use: Legal activities only
+Liability: "As is" service
+
+:loudspeaker: Stay updated: {hostbay_channel}
+Questions? Contact {support_contact}
+
+
+Moxx
+  3:05 PM
+Call the Architect to run analysis of potential state management issues across the entire codebase and ensure correct async or sync is being used (edited) 
+
+
+Moxx
+  5:14 PM
+Support
+My wallet
+Invite friends
+More options
+My trades
+Quick Exchange
+Escrow
+
+
+Moxx
+  10:36 PM
+@ChegueveraUHQ
+
+942342439
+
+
+Moxx
+  11:10 PM
+:house: Hostbay Dashboard
+
+:wave: Welcome back, Hostbay!
+
+:moneybag: Balance: $0.00 USD
+
+What would you like to do today?
+
+:wrench: Admin Panel
+11:10
+:rocket: Welcome to Hostbay!
+
+Domain & Hosting Services
+
+:loudspeaker: Follow @Hostbay for updates & tutorials
+
+What would you like to do?
+
+
+Moxx
+  12:05 AM
+@ChegueveraUHQ
+
+
+Moxx
+  1:33 AM
+E2E testing is important
+
+
+Moxx
+  3:00 AM
+:red_circle: ADMIN ALERT - CRITICAL
+:link: Category: External Api
+:wrench: Component: OpenProvider
+:memo: Message: Domain registration API failure for spf-remboursement.be
+:clock1: Time: 2025-09-19 01:58:03 UTC
+:bar_chart: Details:
+   • domain: spf-remboursement.be
+   • http_status: 500
+   • api_response: {"desc":"Invalid owner handle!","code":331,"data":"Invalid phone number in the domain owner details"}
+   • contact_handle: RA1083275-US
+   • nameservers: anderson.ns.cloudflare.com, leanna.ns.cloudflare.com
+
+
+Moxx
+  3:07 AM
+:tada: Domain Registered!
+
+:globe_with_meridians: spf-remboursement.be
+:moneybag: $0.00 :white_check_mark:
+:lock: Registered & Active
+:globe_with_meridians: DNS: Cloudflare
+:round_pushpin: anderson.ns.cloudflare.com, leanna.ns.cloudflare.com
+
+• :wrench: Manage DNS: /domains
+• :house: Add hosting: /hosting
+• :credit_card: View wallet: /wallet
+
+Domain ready to use! :rocket:
+
+
+Moxx
+  1:45 PM
+:dog2: Watchdog E2E Test c1ab3a8b - 12:45:17
+
+
+Moxx
+  1:54 PM
+:dog2: Watchdog E2E Test 8d450ca9 - 12:53:22
+1:54
+:dog2: Watchdog E2E Test 82c2d42d - 12:54:23
+
+
+Moxx
+  4:38 PM
+6292288341:AAGW8IH-_fLvWDIyMAZNscDkKAnTxkYr5xI
+4:42
+:rocket: Services moved to @Hostbay_bot for hosting, domains, SMS & URLs.
+4:42
+IMG_4550
+ 
+IMG_4550
+
+
+
+
+Moxx
+  4:59 PM
+:link: Continue at @Hostbay_bot
+
+
+Moxx
+  6:35 PM
+:arrows_counterclockwise: *Searching hyjsushsusmca.com
+
+• Checking availability
+• Getting pricing
+• Analyzing status...*
+
+
+Moxx
+  7:16 PM
+:warning: Something went wrong
+
+Please try entering your email again.
+If the problem persists, contact our support team.
+
+:arrows_counterclockwise: Tip: Make sure you have a stable internet connection
+7:21
+:credit_card: Add Funds to Wallet
+
+Choose how you want to add funds to your wallet:
+
+Cryptocurrency Deposits:
+• Send crypto to a generated address
+• Funds automatically credited after confirmation
+• Converted to USD at current rates
+• Minimum deposit: $5 USD
+
+
+Moxx
+  7:26 PM
+:moneybag: Add Funds
+
+Select your preferred cryptocurrency:
+
+Minimum deposit: $5 USD
+
+
+Moxx
+  9:02 PM
+:globe_with_meridians: DNS Dashboard: babypleasehelp.sbs
+
+Zone Status: Active :white_check_mark: | DNS Provider: :large_green_circle: Cloudflare (Recommended)
+Nameservers:
+• anderson.ns.cloudflare.com
+• leanna.ns.cloudflare.com
+
+Records: A: 1 | CNAME: 1
+
+• A: `babypleasehelp.sbs` → `8.8.8.8` :white_circle:
+• CNAME: `www.babypleasehelp.sbs` → `babypleasehelp.sbs` :white_circle:
+
+
+Moxx
+  9:08 PM
+:zap: **Edit A Record: babypleasehelp.sbs** • Auto-Apply Ready
+
+*Current Configuration:
+Name: `babypleasehelp.sbs` (read-only)
+**IP Address:** 8.8.8.8
+TTL: Auto
+**Proxy Status:** :large_orange_circle: Proxied
+
+*:zap: Changes:
+• TTL: 300s → 1s
+• Proxy: :white_circle: Direct → :large_orange_circle: Proxied
+
+*Click to modify fields:***
