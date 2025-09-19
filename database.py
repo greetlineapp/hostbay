@@ -3348,7 +3348,15 @@ async def atomic_domain_order_confirm_with_txid(user_id: int, expected_usd: floa
                     return False
                 
                 # 3. UNIFIED VALIDATION: Use same tolerance logic as webhook handler
-                is_payment_valid = validate_payment_simple(expected_usd, received_usd, 'domain_order', 'database')
+                payment_data = {
+                    'amount': received_usd,
+                    'currency': 'USD',
+                    'transaction_id': txid,
+                    'expected_amount': expected_usd,
+                    'order_type': 'domain_order',
+                    'source': 'database'
+                }
+                is_payment_valid = validate_payment_simple(payment_data)
                 if not is_payment_valid:
                     logger.warning(f"🚫 UNIFIED VALIDATION: Domain order payment rejected - received ${received_usd}, expected ${expected_usd}")
                     # Update order with failed status
