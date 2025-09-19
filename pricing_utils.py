@@ -72,6 +72,12 @@ def calculate_marked_up_price(base_price: Union[float, Decimal], markup_percenta
         else:
             base_decimal = base_price
             
+        # Ensure markup_percentage is numeric to prevent string/int division errors
+        if isinstance(markup_percentage, str):
+            markup_percentage = float(markup_percentage)
+        elif markup_percentage is None:
+            markup_percentage = 15.0
+            
         markup_multiplier = Decimal(str(1 + (markup_percentage / 100)))
         marked_up = base_decimal * markup_multiplier
         

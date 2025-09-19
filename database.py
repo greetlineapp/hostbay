@@ -802,6 +802,7 @@ async def init_database():
                         billing_cycle VARCHAR(20),
                         next_billing_date DATE,
                         auto_renew BOOLEAN DEFAULT true,
+                        last_warning_sent TIMESTAMP NULL DEFAULT NULL,
                         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
                     )

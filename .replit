@@ -5,6 +5,7 @@ channel = "stable-25_05"
 
 [agent]
 expertMode = true
+integrations = ["python_database:1.0.0"]
 
 [workflows]
 runButton = "Project"
