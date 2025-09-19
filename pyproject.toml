@@ -1,0 +1,48 @@
+[project]
+name = "telegram-bot"
+version = "0.1.0"
+description = "Telegram Bot for Domain Registration and Hosting"
+requires-python = ">=3.11"
+dependencies = [
+    "python-telegram-bot",
+    "aiohttp",
+    "psycopg2-binary",
+    "httpx",
+    "asyncio-mqtt",
+    "dnspython",
+    "idna",
+    "psutil",
+    "apscheduler",
+    "pytz",
+    "qrcode[pil]",
+    "python-dateutil",
+    "colorama",
+    "certifi",
+    "attrs",
+    "packaging",
+    "anyio",
+    "sniffio",
+    "typing-extensions",
+    "frozenlist",
+    "multidict",
+    "yarl",
+    "aiosignal",
+    "propcache",
+    "aiohappyeyeballs",
+    "six",
+    "tzlocal",
+    "paho-mqtt",
+    "jsonfield",
+    "django",
+    "asgiref",
+    "sqlparse",
+    "execnet",
+    "aioresponses"
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
