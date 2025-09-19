@@ -1627,8 +1627,8 @@ async def get_or_create_user_with_status(telegram_id: int, username: Optional[st
     start_time = time.perf_counter()
     
     # Check cache first for existing users (most /start commands are from existing users)
-    from performance_cache import cache_get
-    cached_user = cache_get('user_data', telegram_id)
+    from performance_cache import get_cached
+    cached_user = get_cached(f'user_data_{telegram_id}')
     
     if cached_user:
         # Update cached profile data if provided (but don't hit DB for this)
@@ -1672,8 +1672,8 @@ async def get_or_create_user_with_status(telegram_id: int, username: Optional[st
     }
     
     # Cache for 5 minutes (frequent users will hit cache on subsequent /start)
-    from performance_cache import cache_set
-    cache_set('user_data', enriched_data, telegram_id)
+    from performance_cache import set_cached
+    set_cached(f'user_data_{telegram_id}', enriched_data, 300)  # 5 minutes
     
     elapsed = (time.perf_counter() - start_time) * 1000
     logger.info(f"⚡ USER DB QUERY: {telegram_id} in {elapsed:.1f}ms (cached for 5min)")
@@ -1690,9 +1690,9 @@ async def accept_user_terms(telegram_id: int) -> bool:
         
         # CACHE INVALIDATION: Clear specific user cache after state change
         if rows_updated > 0:
-            from performance_cache import cache_invalidate
+            from performance_cache import delete_cached
             # Invalidate cached user data for this specific user to prevent stale data
-            cache_invalidate('user_data', telegram_id)
+            delete_cached(f'user_data_{telegram_id}')
             logger.info(f"✅ Cache invalidated for user {telegram_id} after terms acceptance")
             
         return rows_updated > 0
@@ -3866,8 +3866,8 @@ async def credit_user_wallet(user_id: int, amount_usd: float, provider: str, txi
                             if telegram_result:
                                 telegram_id = telegram_result[0] if isinstance(telegram_result, (tuple, list)) else telegram_result['telegram_id']
                                 
-                                from performance_cache import cache_invalidate
-                                cache_invalidate('user_data', telegram_id)
+                                from performance_cache import delete_cached
+                                delete_cached(f'user_data_{telegram_id}')
                                 logger.info(f"🔄 CACHE_INVALIDATED: User cache cleared for telegram_id {telegram_id} after wallet credit")
                         except Exception as cache_error:
                             # Non-critical error - don't fail the wallet operation
